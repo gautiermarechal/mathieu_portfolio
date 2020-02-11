@@ -39,23 +39,6 @@ export default function GridPhotos_2() {
   const classes = useStyles();
   const largePhoto = tileData[0];
   const [showInfo, setShowInfo] = useState(false);
-
-  useEffect(
-    function showPhotoInfo () {
-      console.log(showInfo);
-      if(!showInfo){
-        setShowInfo(true);
-        console.log(showInfo);
-      }
-      else{
-        setShowInfo(false);
-      }
-      console.log('called');
-      console.log(showInfo);
-    },
-    [showInfo]
-  );
-
   const [infoContent, setInfoContent] = useState(
     <GridListTileBar
             className={classes.infoBar}
@@ -68,26 +51,39 @@ export default function GridPhotos_2() {
             />
   );
 
-  useEffect(
-    function displayNewInfo(){
-      if(showInfo){
-        setInfoContent(
-          <GridListTileBar
-                className={classes.infoBarOpened}
-                title={largePhoto.title}
-                subtitle={largePhoto.title}
-                actionIcon={
-                  <IconButton className={classes.iconLargePhoto} onClick={() => showPhotoInfo()}>
-                    <InfoIcon/>
-                  </IconButton>
-                }
-                />
-        );
-      };
-  }, 
-  [showInfo, infoContent]
-  );
- 
+function showPhotoInfo(){
+  if(!showInfo){
+    setInfoContent(
+    <GridListTileBar
+          className={classes.infoBarOpened}
+          title={largePhoto.title}
+          subtitle={largePhoto.description}
+          actionIcon={
+            <IconButton className={classes.iconLargePhoto} onClick={() => hidePhotoInfo()}>
+              <InfoIcon/>
+            </IconButton>
+          }
+          />
+      );
+      setShowInfo(true);
+    } 
+}
+
+function hidePhotoInfo(){
+  if(showPhotoInfo){
+    setInfoContent(
+      <GridListTileBar
+            className={classes.infoBar}
+            title={largePhoto.title}
+            actionIcon={
+              <IconButton className={classes.iconLargePhoto} onClick={() => showPhotoInfo()}>
+                <InfoIcon/>
+              </IconButton>
+            }
+            />
+    );
+  }
+}
 
   return (
     <div className={classes.root}>
