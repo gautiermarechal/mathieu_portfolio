@@ -7,6 +7,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import tileData from '../assets/TiledData';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
+    padding: '10px !important',
   },
   gridList: {
     padding: '2px',
@@ -31,6 +33,10 @@ const useStyles = makeStyles(theme => ({
   },
   infoBarOpened : {
     height: '100%',
+    fontFamily: "'Rubik', sans-serif",
+  },
+  photoDescription: {
+    whiteSpace: 'normal',
   },
 
 }));
@@ -42,7 +48,11 @@ export default function GridPhotos_2() {
   const [infoContent, setInfoContent] = useState(
     <GridListTileBar
             className={classes.infoBar}
-            title={largePhoto.title}
+            title={
+            <Typography variant="h6">
+              {largePhoto.title}
+            </Typography>
+            }
             actionIcon={
               <IconButton className={classes.iconLargePhoto} onClick={() => showPhotoInfo()}>
                 <InfoIcon/>
@@ -56,8 +66,16 @@ function showPhotoInfo(){
     setInfoContent(
     <GridListTileBar
           className={classes.infoBarOpened}
-          title={largePhoto.title}
-          subtitle={largePhoto.description}
+          title={
+            <Typography variant="h4">
+              {largePhoto.title}
+            </Typography>
+          }
+          subtitle={
+            <Typography variant="body1" className={classes.photoDescription}>
+              {largePhoto.description}
+            </Typography>
+          }
           actionIcon={
             <IconButton className={classes.iconLargePhoto} onClick={() => hidePhotoInfo()}>
               <InfoIcon/>
@@ -74,7 +92,11 @@ function hidePhotoInfo(){
     setInfoContent(
       <GridListTileBar
             className={classes.infoBar}
-            title={largePhoto.title}
+            title={
+              <Typography variant="h6">
+                {largePhoto.title}
+              </Typography>
+            }
             actionIcon={
               <IconButton className={classes.iconLargePhoto} onClick={() => showPhotoInfo()}>
                 <InfoIcon/>
@@ -97,3 +119,5 @@ function hidePhotoInfo(){
     </div>
   );
 }
+
+// Copyright 2020, Gautier Marechal, All rights reserved

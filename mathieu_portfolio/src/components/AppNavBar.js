@@ -160,3 +160,5 @@ export default function AppNavBar() {
     </div>
   );
 }
+
+// Copyright 2020, Gautier Marechal, All rights reserved
