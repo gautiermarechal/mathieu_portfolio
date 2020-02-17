@@ -8,6 +8,7 @@ import GridPhotos_1_1 from './components/GridPhotos_1.1';
 import GridPhotos_2 from './components/Grid_Photos_2';
 import Grid_Photos_3 from './components/Grid_Photos_3';
 import GridPhotos_4 from './components/GridPhotos_4';
+import Grid_Photos_Rows from './components/Grid_Photos_Rows';
 
 const useStyles = makeStyles( theme => ({
   app: {
@@ -27,6 +28,7 @@ function App() {
       <GridPhotos_2/> 
       <Grid_Photos_3/> 
       <GridPhotos_4/> 
+      <Grid_Photos_Rows/>
     </div>
   );
 }
