@@ -12,14 +12,14 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-    padding: '5px !important',
+    // padding: '5px !important',
   },
   gridList: {
     width: '100%',
     height: '100%',
   },
   itemImage: {
-    padding: '10px !important',
+    // padding: '10px !important',
   },
 }));
 

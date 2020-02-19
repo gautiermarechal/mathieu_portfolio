@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-    padding: '10px !important',
+    // padding: '10px !important',
   },
   gridList: {
     padding: '2px',

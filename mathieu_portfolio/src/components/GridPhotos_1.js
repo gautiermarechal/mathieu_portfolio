@@ -11,14 +11,14 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-    padding: '5px !important',
+    // padding: '5px !important',
   },
   gridList: {
     width: '100%',
     height: '100%',
   },
   itemImage: {
-    padding: '10px !important',
+    // padding: '10px !important',
   },
 }));
 
@@ -28,7 +28,7 @@ export default function GridPhotos_1() {
   return (
     <div className={classes.root}>
       <GridList cellHeight={500} className={classes.gridList} cols={2}>
-        {tileData.slice(6,8).map(tile => (
+        {tileData.slice(6,12).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
           </GridListTile>

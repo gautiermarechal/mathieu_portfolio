@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   gridList: {
     flexWrap: 'nowrap',
     transform: 'translateZ(0)',
-    margin: '5px !important',
+    // margin: '5px !important',
     height: '100%',
   },
   title: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
   supportPaper: {
-    padding: '10px',
+    // padding: '10px',
     height: '100%',
     boxShadow: 'none',
   },
@@ -53,11 +53,6 @@ export default function Grid_Photos_3() {
             alt={tile.title} 
             />
             <GridListTileBar
-              // title={
-              //   <Typography variant="body2">
-              //   {tile.title}
-              //   </Typography>
-              //   }
               classes={{
                 root: classes.titleBar,
                 title: classes.title,

@@ -24,11 +24,10 @@ function App() {
     <div className={classes.app}>
       <AppNavBar/>
       <GridPhotos_1/>
-      <GridPhotos_1_1/>
       <GridPhotos_2/> 
-      <Grid_Photos_3/> 
+      <Grid_Photos_3/>
+      <Grid_Photos_Rows/> 
       <GridPhotos_4/> 
-      <Grid_Photos_Rows/>
     </div>
   );
 }

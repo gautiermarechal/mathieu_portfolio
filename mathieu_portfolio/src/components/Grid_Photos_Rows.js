@@ -13,14 +13,15 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-    padding: '5px !important',
+    // padding: '5px !important',
   },
   gridList: {
     width: 'auto',
     height: 'auto',
+    padding: '2px',
   },
   itemImage: {
-    padding: '10px !important',
+    // padding: '4px !important',
   },
   title: {
     flexGrow: 1,
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function GridPhotos_1() {
+export default function GridPhotos_Rows() {
   const classes = useStyles(); 
 
   return (
@@ -45,7 +46,6 @@ export default function GridPhotos_1() {
             <img src={tile.img} alt={tile.title} />
           </GridListTile>
         ))}
-        {/* <li><Typography variant="h2">Hello</Typography></li> */}
       </GridList>
     </Grid>
     <Grid item xs={6}>
@@ -55,7 +55,6 @@ export default function GridPhotos_1() {
             <img src={tile.img} alt={tile.title} />
           </GridListTile>
         ))}
-        {/* <li><Typography variant="h2">Hello</Typography></li> */}
       </GridList>
       <Typography variant="h2" className={classes.title}>Ski. Photos. Life.</Typography>
     </Grid>

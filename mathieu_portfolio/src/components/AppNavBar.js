@@ -1,14 +1,16 @@
 import React from 'react';
+import {useState} from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import { purple } from '@material-ui/core/colors';
 import Grid from '@material-ui/core/Grid';
-import mathLogo from '../assets/Mathieu_Tranchida_Logo.png';
+import BarDrawer from './BarDrawer';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,17 +22,19 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "'Rubik', sans-serif",
     textAlign: 'center',
     verticalAlign: 'middle',
-    lineHeight: '53px',
+    marginTop: '20px',
   },
   smallTitle: {
     flexGrow: 1,
     fontFamily: "'Rubik', sans-serif",
   },
   toolBar: {
+    flexGrow: 1,
     minHeight: '100px',
   },
   appBar: {
     backgroundColor: 'white',
+    color: 'black',
     boxShadow: 'none',
     fontFamily: "'Rubik', sans-serif",
     flexGrow: 1,
@@ -38,6 +42,23 @@ const useStyles = makeStyles(theme => ({
   logo:{
     maxHeight: '100%',
     maxWidth: '100%',
+  },
+  sectionDesktop: {
+    flexGrow: 1,
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    flexGrow: 1,
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+  iconGroup: {
+    marginTop: '8px',
   },
 }));
 
@@ -54,53 +75,8 @@ const ColorButton1 = withStyles(theme => ({
       '&:hover': {
         backgroundColor: 'black',
         color: 'white',
-        border: '5px solid',
+        border: '5px none',
         borderColor: 'black',
-      },
-    },
-  }))(Button);
-
-  const ColorButton2 = withStyles(theme => ({
-    root: {
-      color: 'black',
-      fontFamily: "'Rubik', sans-serif",
-      height: '100%',
-      width: '100%', 
-      borderRadius: '0%',
-      backgroundColor: 'white',
-      '&:hover': {
-        backgroundColor: 'seagreen',
-        color: 'yellow',
-      },
-    },
-  }))(Button);
-
-  const ColorButton3 = withStyles(theme => ({
-    root: {
-      color: 'black',
-      fontFamily: "'Rubik', sans-serif",
-      height: '100%',
-      width: '100%', 
-      borderRadius: '0%',
-      backgroundColor: 'white',
-      '&:hover': {
-        backgroundColor: 'tomato',
-        color: 'deepskyblue',
-      },
-    },
-  }))(Button);
-
-  const ColorButton4 = withStyles(theme => ({
-    root: {
-      color: 'black',
-      fontFamily: "'Rubik', sans-serif",
-      height: '100%',
-      width: '100%', 
-      borderRadius: '0%',
-      backgroundColor: 'white',
-      '&:hover': {
-        backgroundColor: 'darkturquoise',
-        color: 'navajowhite',
       },
     },
   }))(Button);
@@ -108,30 +84,19 @@ const ColorButton1 = withStyles(theme => ({
 export default function AppNavBar() {
   const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar  className={classes.toolBar}>
-            <Grid container spacing={0}>
+  const desktopMenu = (
+    <Grid container spacing={0}>
                 <Grid item xs ={2}>
-                <img className={classes.logo} src={mathLogo}/>
+                <Typography variant="h5" className={classes.smallTitle}>
+                      Mathieu Tranchida.
+                </Typography>                
                 </Grid>
                 <Grid item xs ={2}>
                 <ColorButton1>
                         <Typography variant="h5" className={classes.smallTitle}>
-                            Ski
+                            Action
                         </Typography>
-                    </ColorButton1>
-                </Grid>
-                <Grid item xs ={2}>
-                    {/* <Typography variant="subtitle1" className={classes.title}>
-                        Mathieu Tranchida
-                    </Typography> */}
-                      <ColorButton1>
-                    <Typography variant="h5" className={classes.smallTitle}>
-                        Climbing
-                    </Typography>
-                    </ColorButton1>
+                </ColorButton1>
                 </Grid>
                 <Grid item xs ={2}>
                     <ColorButton1>
@@ -154,7 +119,38 @@ export default function AppNavBar() {
                     </Typography>
                     </ColorButton1>
                 </Grid>
+                <Grid item xs={2}>
+                  <div className={classes.iconGroup}>
+                  <IconButton><InstagramIcon/></IconButton>
+                  <IconButton><LinkedInIcon/></IconButton>
+                  <IconButton><YouTubeIcon/></IconButton>
+                  </div>
+                </Grid>
             </Grid>
+  );
+
+  const mobileMenu = (
+    <Grid container spacing={0}>
+      <Grid item xs ={6}>
+      <Typography variant="h5" className={classes.title}>
+                      Mathieu Tranchida.
+      </Typography>       
+      </Grid>
+      <Grid item xs ={6}>
+        <BarDrawer/>
+      </Grid>
+    </Grid>
+  );
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar  className={classes.toolBar}>
+          <div className={classes.sectionDesktop}>
+            {desktopMenu}
+          </div>
+          <div className={classes.sectionMobile}>
+            {mobileMenu}
+          </div>
         </Toolbar>
       </AppBar>
     </div>
