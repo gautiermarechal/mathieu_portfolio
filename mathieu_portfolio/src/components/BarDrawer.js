@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
@@ -16,6 +17,7 @@ const useStyles = makeStyles({
   list: {
     width: 250,
     fontFamily: "'Rubik', sans-serif",
+    textDecoration: 'none !important',
   },
   fullList: {
     width: 'auto',
@@ -27,7 +29,12 @@ const useStyles = makeStyles({
   },
   iconGroup: {
     margin: '0 auto',
-  }
+  },
+  smallTitle: {
+    flexGrow: 1,
+    fontFamily: "'Rubik', sans-serif",
+    textDecoration: 'none',
+  },
 });
 
 const ColorButton1 = withStyles(theme => ({
@@ -74,23 +81,60 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {['Action', 'Landscapes', 'Motions', 'About Me'].map((text) => (
-          <ListItem key={text}>
+        <Link to="/action" className={classes.smallTitle}>
+          <ListItem key={"Action"}>
             <ListItemText primary={
               <ColorButton1>
-              <Typography variant="h5">
-              {text}
+              <Typography variant="h5" className={classes.smallTitle}>
+              Action
               </Typography>
               </ColorButton1>
-            } />
+            }
+            />
           </ListItem>
-        ))}
+        </Link>
+        <Link to="/landscapes" className={classes.smallTitle}>
+          <ListItem key={"Landscapes"}>
+            <ListItemText primary={
+              <ColorButton1>
+              <Typography variant="h5" className={classes.smallTitle}>
+              Landscapes
+              </Typography>
+              </ColorButton1>
+            }
+            />
+          </ListItem>
+        </Link>
+        <Link to="/motions" className={classes.smallTitle}>
+          <ListItem key={"Motions"}>
+            <ListItemText primary={
+              <ColorButton1>
+              <Typography variant="h5" className={classes.smallTitle}>
+              Motions
+              </Typography>
+              </ColorButton1>
+            }
+            />
+          </ListItem>
+        </Link>
+        <Link to="/about-me" className={classes.smallTitle}>
+          <ListItem key={"About-Me"}>
+            <ListItemText primary={
+              <ColorButton1>
+              <Typography variant="h5" className={classes.smallTitle}>
+              About Me
+              </Typography>
+              </ColorButton1>
+            }
+            />
+          </ListItem>
+        </Link>
         <ListItem>
         <div className={classes.iconGroup}>
-                  <IconButton><InstagramIcon/></IconButton>
-                  <IconButton><LinkedInIcon/></IconButton>
-                  <IconButton><YouTubeIcon/></IconButton>
-                  </div>
+        <Link to="/instagram"><IconButton><InstagramIcon/></IconButton></Link>
+        <Link to="/linkedin"><IconButton><LinkedInIcon/></IconButton></Link>
+        <Link to="/youtube"><IconButton><YouTubeIcon/></IconButton></Link>
+        </div>
         </ListItem>
       </List>
     </div>

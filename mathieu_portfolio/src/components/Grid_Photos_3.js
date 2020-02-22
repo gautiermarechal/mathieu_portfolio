@@ -5,7 +5,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import tileData from '../assets/TiledData';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+
 
 const useStyles = makeStyles(theme => ({
   root: {

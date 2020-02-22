@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -21,6 +22,7 @@ const useStyles = makeStyles( theme => ({
 function App() {
   const classes = useStyles();
   return (
+    <BrowserRouter>
     <div className={classes.app}>
       <AppNavBar/>
       <GridPhotos_1/>
@@ -29,6 +31,7 @@ function App() {
       <Grid_Photos_Rows/> 
       <GridPhotos_4/> 
     </div>
+    </BrowserRouter>
   );
 }
 

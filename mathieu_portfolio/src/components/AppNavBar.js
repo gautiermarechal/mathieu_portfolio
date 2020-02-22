@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
+import { Route, Link } from 'react-router-dom';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -27,6 +28,7 @@ const useStyles = makeStyles(theme => ({
   smallTitle: {
     flexGrow: 1,
     fontFamily: "'Rubik', sans-serif",
+    textDecoration: 'none',
   },
   toolBar: {
     flexGrow: 1,
@@ -40,8 +42,10 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   logo:{
-    maxHeight: '100%',
-    maxWidth: '100%',
+    flexGrow: 1,
+    fontFamily: "'Rubik', sans-serif",
+    textDecoration: 'none',
+    color: 'black',
   },
   sectionDesktop: {
     flexGrow: 1,
@@ -87,43 +91,53 @@ export default function AppNavBar() {
   const desktopMenu = (
     <Grid container spacing={0}>
                 <Grid item xs ={2}>
+                <Link to="/" className={classes.logo}>
                 <Typography variant="h5" className={classes.smallTitle}>
                       Mathieu Tranchida.
-                </Typography>                
+                </Typography>   
+                </Link>             
                 </Grid>
                 <Grid item xs ={2}>
+                <Link to="/action" className={classes.smallTitle}>
                 <ColorButton1>
                         <Typography variant="h5" className={classes.smallTitle}>
                             Action
                         </Typography>
                 </ColorButton1>
+                </Link>
                 </Grid>
                 <Grid item xs ={2}>
+                  <Link to="/landscapes" className={classes.smallTitle}>
                     <ColorButton1>
                     <Typography variant="h5" className={classes.smallTitle}>
                         Landscapes
                     </Typography>
                     </ColorButton1>
+                    </Link>
                 </Grid>
                 <Grid item xs ={2}>
+                  <Link to="/motions" className={classes.smallTitle}>
                     <ColorButton1>
                     <Typography variant="h5" className={classes.smallTitle}>
                         Motions
                     </Typography>
                     </ColorButton1>
+                  </Link>
                 </Grid>
                 <Grid item xs ={2}>
+                  <Link to="/about-me" className={classes.smallTitle}>
                     <ColorButton1>
                     <Typography variant="h5" className={classes.smallTitle}>
                       About Me
                     </Typography>
                     </ColorButton1>
+                  </Link>
                 </Grid>
                 <Grid item xs={2}>
                   <div className={classes.iconGroup}>
-                  <IconButton><InstagramIcon/></IconButton>
-                  <IconButton><LinkedInIcon/></IconButton>
-                  <IconButton><YouTubeIcon/></IconButton>
+                  <Link to="/instagram"><IconButton><InstagramIcon/></IconButton></Link>
+                  <Link to="/linkedin"><IconButton><LinkedInIcon/></IconButton></Link>
+                  <Link to="/youtube"><IconButton><YouTubeIcon/></IconButton></Link>
                   </div>
                 </Grid>
             </Grid>
@@ -132,9 +146,11 @@ export default function AppNavBar() {
   const mobileMenu = (
     <Grid container spacing={0}>
       <Grid item xs ={6}>
-      <Typography variant="h5" className={classes.title}>
+      <a href="\" className={classes.smallTitle}>
+      <Typography variant="h5" className={classes.title} href="/">
                       Mathieu Tranchida.
-      </Typography>       
+      </Typography> 
+      </a>       
       </Grid>
       <Grid item xs ={6}>
         <BarDrawer/>
