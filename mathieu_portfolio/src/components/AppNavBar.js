@@ -93,7 +93,7 @@ export default function AppNavBar() {
                 <Grid item xs ={2}>
                 <Link to="/" className={classes.logo}>
                 <Typography variant="h5" className={classes.smallTitle}>
-                      Mathieu Tranchida.
+                      Mathieu <br/> Tranchida
                 </Typography>   
                 </Link>             
                 </Grid>
@@ -148,7 +148,7 @@ export default function AppNavBar() {
       <Grid item xs ={6}>
       <a href="\" className={classes.smallTitle}>
       <Typography variant="h5" className={classes.title} href="/">
-                      Mathieu Tranchida.
+                      Mathieu Tranchida
       </Typography> 
       </a>       
       </Grid>

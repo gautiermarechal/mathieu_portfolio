@@ -109,7 +109,7 @@ function hidePhotoInfo(){
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={800} className={classes.gridList} cols={2}>
+      <GridList cellHeight={800} className={classes.gridList} cols={1}>
         {<GridListTile key={largePhoto.img} cols={largePhoto.cols || 1}>
             <img src={largePhoto.img} alt={largePhoto.title} />
             {infoContent}
