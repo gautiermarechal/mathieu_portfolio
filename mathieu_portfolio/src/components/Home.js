@@ -16,11 +16,12 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     // padding: '7.5px',
-    fontFamily: "'Rubik', sans-serif",
+    fontFamily: "'Rubik', sans-serif !important",
   },
   gridList: {
     width: '100%',
     height: '100%',
+    fontFamily: "'Rubik', sans-serif",
   },
   itemPaper: {
     width: '100%',
@@ -62,7 +63,7 @@ export default function Home(props) {
     'Motions',
     'About Me'
 ]);
-const linkRoutes = ['/action', '/landscapes', 'motions', 'about-me'];
+const linkRoutes = ['/action', '/landscapes', '/motions', '/about-me'];
 
   const getGridListCol = () => {
     if(colMatches){
@@ -74,8 +75,11 @@ const linkRoutes = ['/action', '/landscapes', 'motions', 'about-me'];
   
   return (
     <div className={classes.root}>
-      <GridList cellHeight={335} className={classes.gridList} cols={getGridListCol()} 
-      spacing={1}>
+      <GridList 
+        cellHeight={335} 
+        className={classes.gridList} 
+        cols={getGridListCol()} 
+        spacing={0}>
         {paperTitle.map((title, index) => (
           <GridListTile key={title} cols={1} classes={{tile: classes.tile}}>
             <img src={allImages[index].img}></img>

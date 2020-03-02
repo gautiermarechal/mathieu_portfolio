@@ -11,6 +11,8 @@ import Grid_Photos_Rows from './components/Grid_Photos_Rows';
 import Home from './components/Home';
 import HomeHeader from './components/HomeHeader';
 import Home_Paragraph from './components/Home_Paragraph';
+import Footer from './components/Footer';
+import AboutMe from './components/AboutMe';
 
 const useStyles = makeStyles( theme => ({
   app: {
@@ -33,10 +35,11 @@ function App() {
     <GridPhotos_4/> */}
     <Route path="/">
       <Route path="/" exact>
-        <HomeHeader/>
+        <AppNavBar/>
         <Home/>
         <Home_Paragraph/>
         <Grid_Photos_3/>
+        <Footer/>
       </Route>
       <Route path="/action">
         <AppNavBar/>
@@ -44,6 +47,7 @@ function App() {
         <GridPhotos_2/>
         <Grid_Photos_Rows/>
         <GridPhotos_4/>
+        <Footer/>
       </Route>
       <Route path="/landscapes">
         <AppNavBar/>
@@ -51,6 +55,7 @@ function App() {
         <GridPhotos_2/>
         <Grid_Photos_Rows/>
         <GridPhotos_4/>
+        <Footer/>
       </Route>
       <Route path="/motions">
         <AppNavBar/>
@@ -58,13 +63,12 @@ function App() {
         <GridPhotos_2/>
         <Grid_Photos_Rows/>
         <GridPhotos_4/>
+        <Footer/>
       </Route>
       <Route path="/about-me">
         <AppNavBar/>
-        <GridPhotos_1/>
-        <GridPhotos_2/>
-        <Grid_Photos_Rows/>
-        <GridPhotos_4/>
+        <AboutMe/>
+        <Footer/>
       </Route>
     </Route>
     

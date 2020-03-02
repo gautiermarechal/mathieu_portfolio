@@ -13,12 +13,13 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
+    flexGrow: 1,
     // padding: '5px !important',
   },
   gridList: {
     width: 'auto',
     height: 'auto',
-    padding: '2px',
+    // padding: '2px',
   },
   itemImage: {
     // padding: '4px !important',
@@ -39,8 +40,8 @@ export default function GridPhotos_Rows() {
   return (
     <div className={classes.root}>
     <Grid container>
-    <Grid item xs={6}>
-    <GridList cellHeight={500} className={classes.gridList} cols={1}>
+    <Grid item md={6} spacing={0}>
+    <GridList cellHeight={500} className={classes.gridList} cols={1} spacing={0}>
         {tileData.slice(19,22).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
@@ -48,8 +49,8 @@ export default function GridPhotos_Rows() {
         ))}
       </GridList>
     </Grid>
-    <Grid item xs={6}>
-    <GridList cellHeight={400} className={classes.gridList} cols={1}>
+    <Grid item md={6} spacing={0}>
+    <GridList cellHeight={400} className={classes.gridList} cols={1} spacing={0}>
         {tileData.slice(24,27).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />

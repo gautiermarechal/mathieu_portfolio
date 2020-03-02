@@ -4,6 +4,7 @@ import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
 import tileData from '../assets/TiledData';
 
 const useStyles = makeStyles(theme => ({
@@ -22,6 +23,10 @@ const useStyles = makeStyles(theme => ({
   itemImage: {
     display: 'flex',
   },
+  titleBar: {
+    background:
+      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+  },
 }));
 
 export default function GridPhotos_1(props) {
@@ -39,10 +44,14 @@ export default function GridPhotos_1(props) {
   
   return (
     <div className={classes.root}>
-      <GridList cellHeight={500} className={classes.gridList} cols={getGridListCol()}>
+      <GridList cellHeight={500} className={classes.gridList} cols={getGridListCol()} spacing={0}>
         {tileData.slice(6,12).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
+            <GridListTileBar
+            classes={{
+              root: classes.titleBar,
+            }}/>
           </GridListTile>
         ))}
       </GridList>

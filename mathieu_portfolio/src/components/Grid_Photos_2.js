@@ -19,8 +19,8 @@ const useStyles = makeStyles(theme => ({
     // padding: '10px !important',
   },
   gridList: {
-    padding: '2px',
-    paddingTop: '4px',
+    // padding: '2px',
+    // paddingTop: '4px',
     width: '100%',
     height: '100%',
   },
@@ -30,6 +30,8 @@ const useStyles = makeStyles(theme => ({
   infoBar: {
     backgroundColor: 'rgba(0,0,0, 0)',  
     fontFamily: "'Rubik', sans-serif",
+    background:
+    'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
   infoBarOpened : {
     height: '100%',
@@ -109,7 +111,7 @@ function hidePhotoInfo(){
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={800} className={classes.gridList} cols={1}>
+      <GridList cellHeight={800} className={classes.gridList} cols={1} spacing={0}>
         {<GridListTile key={largePhoto.img} cols={largePhoto.cols || 1}>
             <img src={largePhoto.img} alt={largePhoto.title} />
             {infoContent}

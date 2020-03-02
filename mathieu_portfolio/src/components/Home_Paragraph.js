@@ -12,8 +12,14 @@ const useStyles = makeStyles(theme => ({
     root:{
         paddingLeft: '100px',
         paddingRight: '100px',
-        paddingTop: '50px',
+        paddingTop: '70px',
         paddingBottom: '50px',
+        [theme.breakpoints.down('md')]: {
+            paddingLeft: '50px',
+            paddingRight: '50px',
+            paddingTop: '35px',
+            paddingBottom: '25px',
+        },
     },
     iconGroup: {
         paddingTop: '35px',

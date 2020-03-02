@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-    padding: '5px !important',
+    // padding: '5px !important',
     heigth: '400px',
   },
   gridList: {
@@ -46,7 +46,7 @@ export default function Grid_Photos_3() {
   return (
     <div className={classes.root}>
     <Paper className={classes.supportPaper} elevation={10}>
-      <GridList className={classes.gridList} cols={3} >
+      <GridList className={classes.gridList} cols={3} spacing={0}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} className={classes.itemImage}>
             <img src={tile.img} 
