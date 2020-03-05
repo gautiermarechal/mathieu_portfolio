@@ -30,7 +30,9 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "'Rubik', sans-serif",
     textAlign: 'center',
     verticalAlign: 'middle',
-    paddingTop: '20% !important',
+    margin: theme.spacing(5),
+    paddingTop: theme.spacing(10),
+    height: '200px !important',
   },
 }));
 
@@ -56,8 +58,8 @@ export default function GridPhotos_Rows() {
             <img src={tile.img} alt={tile.title} />
           </GridListTile>
         ))}
+        <Typography variant="h4" className={classes.title}>Ski. Photos. Life.</Typography>
       </GridList>
-      <Typography variant="h2" className={classes.title}>Ski. Photos. Life.</Typography>
     </Grid>
     </Grid>
     </div>

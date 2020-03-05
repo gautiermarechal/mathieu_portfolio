@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: '100px',
   },
   appBar: {
-    backgroundColor: 'white',
+    backgroundColor: '#FFFAFA',
     color: 'black',
     boxShadow: 'none',
     fontFamily: "'Rubik', sans-serif",
@@ -73,7 +73,7 @@ const ColorButton1 = withStyles(theme => ({
       height: '100%',
       width: '100%', 
       borderRadius: '0%',
-      backgroundColor: 'white',
+      backgroundColor: '#FFFAFA',
       border: '5px none',
       borderRadius: '1%',
       '&:hover': {

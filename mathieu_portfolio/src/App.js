@@ -17,7 +17,7 @@ import AboutMe from './components/AboutMe';
 const useStyles = makeStyles( theme => ({
   app: {
     textAlign: 'center',
-    backgroundColor: '#FFFFF',
+    backgroundColor: '#F5F5F5',
   },
 }
 ));
