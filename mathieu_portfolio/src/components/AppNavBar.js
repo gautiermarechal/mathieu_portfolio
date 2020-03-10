@@ -75,7 +75,7 @@ const ColorButton1 = withStyles(theme => ({
       borderRadius: '0%',
       backgroundColor: '#FFFAFA',
       border: '5px none',
-      borderRadius: '1%',
+      borderRadius: '0',
       '&:hover': {
         backgroundColor: 'black',
         color: 'white',

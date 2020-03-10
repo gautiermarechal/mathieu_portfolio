@@ -33,6 +33,11 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(5),
     paddingTop: theme.spacing(10),
     height: '200px !important',
+    lineHeight: '200px ',
+    [theme.breakpoints.down('md')]: {
+      lineHeight: 'none',
+      paddingTop: theme.spacing(0),
+    },
   },
 }));
 
