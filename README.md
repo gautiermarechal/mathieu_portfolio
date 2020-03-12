@@ -4,7 +4,7 @@ This website is intended to present Mathieu Tranchida's work in photography and 
 The only backend present is a database to store photos and handling of HTTP methods to receive emails and send emails to user when the form is submitted. 
 
 # Tech Used
-React, Javascript (ES6), HTML, CSS, EmailJS
+React, Material UI, Javascript (ES6), HTML, CSS, EmailJS
 
 # View the project - 2 options
   1. You can go to mathieutranchida.com
