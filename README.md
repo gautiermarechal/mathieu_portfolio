@@ -6,9 +6,8 @@ The only backend present is a database to store photos and handling of HTTP meth
 # Tech Used
 React, Material UI, Javascript (ES6), HTML, CSS, EmailJS
 
-# View the project - 2 options
-  1. You can go to mathieutranchida.com
-  2. - Download the zip file of the project
+# View the project 
+     - Download the zip file of the project
      - Go to terminal or command line
      - Go to file directory
      - Run `npm run` 
