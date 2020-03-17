@@ -6,7 +6,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import tileData from '../assets/TiledData';
+import tileData from '../assets/TiledData_Action';
 
 
 const useStyles = makeStyles(theme => ({
