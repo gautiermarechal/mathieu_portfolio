@@ -2,7 +2,7 @@ import image1 from './photos/lifestyle/0D1A0613.jpeg';
 import image3 from './photos/lifestyle/0D1A2933.jpeg';
 import image4 from './photos/lifestyle/0D1A4014.jpeg';
 import image5 from './photos/lifestyle/ATX_2019Juin_AnnieWeir_InternetQuality (13 of 14).jpeg';
-import image6 from './photos/lifestyle/ATX_Jeannemap_190221_Test (8 of 27).jpeg';
+import image6 from './photos/lifestyle/Noël18_Export2_InternetQuality (4 of 6).jpeg';
 import image7 from './photos/lifestyle/ATX_Jeannemap_190221_Test (10 of 27).jpeg';
 import image8 from './photos/lifestyle/COC_CabinTripDay2_Sep18_InternetQualityNoStamp (35 of 38).jpeg';
 import image9 from './photos/lifestyle/COC_Sutton_Fall2018_NoCopyright_InternetQuality (19 of 67).jpeg';
@@ -13,7 +13,7 @@ import image13 from './photos/lifestyle/FromSwitzerlandWithLove_Street_Day7_Haut
 import image14 from './photos/lifestyle/GFSCamps_Summer2019_Day1_InternetQuality (87 of 88).jpeg';
 import image15 from './photos/lifestyle/IF3Montreal_2018_Day1_NoStamp_InternetQuality (27 of 28).jpeg';
 import image16 from './photos/lifestyle/LakeLouise_2019April30_LD (8 of 17).jpeg';
-import image17 from './photos/lifestyle/Noël18_Export2_InternetQuality (4 of 6).jpeg';
+import image17 from './photos/lifestyle/ATX_Jeannemap_190221_Test (8 of 27).jpeg';
 import image18 from './photos/lifestyle/Rigaud_ElmerLeung_Jul2019.jpeg';
 import image19 from './photos/lifestyle/SunshineVillage_2019May1_LD (23 of 24).jpeg';
 import image20 from './photos/lifestyle/SunshineVillage_2019May2_LD (4 of 19).jpeg';

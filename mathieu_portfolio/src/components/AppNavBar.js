@@ -116,10 +116,10 @@ export default function AppNavBar() {
                     </Link>
                 </Grid>
                 <Grid item xs ={2}>
-                  <Link to="/motions" className={classes.smallTitle}>
+                  <Link to="/lifestyle" className={classes.smallTitle}>
                     <ColorButton1>
                     <Typography variant="h5" className={classes.smallTitle}>
-                        Motions
+                        Lifestyle
                     </Typography>
                     </ColorButton1>
                   </Link>
@@ -135,9 +135,9 @@ export default function AppNavBar() {
                 </Grid>
                 <Grid item xs={2}>
                   <div className={classes.iconGroup}>
-                  <Link to="/instagram"><IconButton><InstagramIcon/></IconButton></Link>
-                  <Link to="/linkedin"><IconButton><LinkedInIcon/></IconButton></Link>
-                  <Link to="/youtube"><IconButton><YouTubeIcon/></IconButton></Link>
+                  <a href="https://www.instagram.com/mathieutranchida/" target="_blank"><IconButton><InstagramIcon/></IconButton></a>
+                  <a href="https://www.linkedin.com/in/mathieu-tranchida-17765212b/" target="_blank"><IconButton><LinkedInIcon/></IconButton></a>
+                  <a href="https://www.youtube.com/user/MrIntelx9" target="_blank"><IconButton><YouTubeIcon/></IconButton></a>
                   </div>
                 </Grid>
             </Grid>

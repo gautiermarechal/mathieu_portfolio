@@ -30,3 +30,5 @@ export default function HomeHeader() {
     </AppBar>       
     );
 }
+
+// Copyright 2020, Gautier Marechal, All rights reserved

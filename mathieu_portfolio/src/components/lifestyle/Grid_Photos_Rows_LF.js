@@ -49,7 +49,7 @@ export default function GridPhotos_Rows() {
     <Grid container>
     <Grid item md={6} spacing={0}>
     <GridList cellHeight={500} className={classes.gridList} cols={1} spacing={0}>
-        {tileData.slice(19,22).map(tile => (
+        {tileData.slice(7,11).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
           </GridListTile>
@@ -58,12 +58,11 @@ export default function GridPhotos_Rows() {
     </Grid>
     <Grid item md={6} spacing={0}>
     <GridList cellHeight={400} className={classes.gridList} cols={1} spacing={0}>
-        {tileData.slice(24,27).map(tile => (
+        {tileData.slice(11,16).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
           </GridListTile>
         ))}
-        <Typography variant="h4" className={classes.title}>Ski. Photos. Life.</Typography>
       </GridList>
     </Grid>
     </Grid>

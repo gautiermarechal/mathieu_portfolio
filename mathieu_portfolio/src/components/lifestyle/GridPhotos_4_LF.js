@@ -44,8 +44,8 @@ export default function GridPhotos_1() {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={500} className={classes.gridList} cols={getGridListCol()} spacing={0}>
-        {tileData.slice(12,18).map(tile => (
+      <GridList cellHeight={600} className={classes.gridList} cols={getGridListCol()} spacing={0}>
+        {tileData.slice(17).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar

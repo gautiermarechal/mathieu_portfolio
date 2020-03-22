@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function GridPhotos_2() {
   const classes = useStyles();
-  const largePhoto = tileData[0];
+  const largePhoto = tileData[10];
   const [showInfo, setShowInfo] = useState(false);
   const [infoContent, setInfoContent] = useState(
     <GridListTileBar
@@ -111,7 +111,7 @@ function hidePhotoInfo(){
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={800} className={classes.gridList} cols={1} spacing={0}>
+      <GridList cellHeight={650} className={classes.gridList} cols={1} spacing={0}>
         {<GridListTile key={largePhoto.img} cols={largePhoto.cols || 1}>
             <img src={largePhoto.img} alt={largePhoto.title} />
             {infoContent}

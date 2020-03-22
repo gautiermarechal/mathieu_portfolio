@@ -4,10 +4,10 @@ import image3 from './photos/landscapes/0D1A5721.jpeg';
 import image4 from './photos/landscapes/0D1A7664.jpeg';
 import image5 from './photos/landscapes/0D1A149311.jpeg';
 import image6 from './photos/landscapes/Canmore_2019April29_LD (1 of 4).jpeg';
-import image7 from './photos/landscapes/Canmore_2019April29_LD (2 of 4).jpeg';
+import image7 from './photos/landscapes/COC_CabinTripDay2_Sep18_InternetQualityNoStamp (11 of 38).jpeg';
 import image8 from './photos/landscapes/Canmore_2019April29_LD (3 of 4).jpeg';
 import image9 from './photos/landscapes/COC_CabinTripDay1_Sep18_InternetQualityNoStamp (12 of 36).jpeg';
-import image10 from './photos/landscapes/COC_CabinTripDay2_Sep18_InternetQualityNoStamp (11 of 38).jpeg';
+import image10 from './photos/landscapes/Canmore_2019April29_LD (2 of 4).jpeg';
 import image11 from './photos/landscapes/COC_CabinTripDay3_Sep18_InternetQualityNoStamp (1 of 4).jpeg';
 import image12 from './photos/landscapes/COC_Sutton_Fall2018_NoCopyright_InternetQuality (26 of 67).jpeg';
 import image13 from './photos/landscapes/GFSCamps_Summer2019_Day4_InternetQuality (1 of 23).jpeg';
@@ -40,7 +40,7 @@ const tileData = [
      {
       img: image3,
       author: 'Mathieu Tranchida',
-      cols: 1,
+      cols: 2,
      },
     {
         img: image4,
@@ -75,7 +75,7 @@ const tileData = [
     {
       img: image10,
       author: 'Mathieu Tranchida',
-      cols: 1,
+      cols: 2,
     },
     {
       img: image11,

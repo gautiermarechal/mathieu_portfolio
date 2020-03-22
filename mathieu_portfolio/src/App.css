@@ -7,4 +7,10 @@ html{
   background-color: #F6F7F8;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');

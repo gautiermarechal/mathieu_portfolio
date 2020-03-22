@@ -1,8 +1,8 @@
-import image1 from './photos/action/0D1A2019.jpeg';
-import image2 from './photos/action/0D1A2077.jpeg';
+import image1 from './photos/action/Summit Challenge 2020 - Vincent Authier & Mathieu Tranchida.jpeg';
+import image2 from './photos/action/0D1A3429-2.jpeg';
 import image3 from './photos/action/0D1A2858.jpeg';
 import image4 from './photos/action/0D1A2870.jpeg';
-import image5 from './photos/action/0D1A3429-2.jpeg';
+import image5 from './photos/action/0D1A2019.jpeg';
 import image6 from './photos/action/0D1A5745.jpeg';
 import image7 from './photos/action/AllezUp_ATX_ZoeBeauchemin_Dec18 (1 of 1).jpeg';
 import image8 from './photos/action/ATX_2019Juin_AnnieWeir_InternetQuality (10 of 14).jpeg';
@@ -22,7 +22,7 @@ import image21 from './photos/action/MathieuTranchida_PsicoblocOpenSeries2019 (6
 import image22 from './photos/action/MontTremblant_CSSC_Yamarual_Dec18 (1 of 1).jpeg';
 import image23 from './photos/action/REMCO-5.jpeg';
 import image24 from './photos/action/SaintSauveur_190310_VincentAuthier_InternetQuality (2 of 6).jpeg';
-import image25 from './photos/action/Summit Challenge 2020 - Vincent Authier & Mathieu Tranchida.jpeg';
+import image25 from './photos/action/0D1A2077.jpeg';
 import image26 from './photos/action/SunshineVillage_2019May1_LD (16 of 24).jpeg';
 import image27 from './photos/action/SunshineVillage_2019May2_LD (12 of 19).jpeg';
 import image28 from './photos/action/ValDIsère_18Dec29_InternetQuality (4 of 20).jpeg';
@@ -63,7 +63,7 @@ const tileData = [
     {
       img: image5,
       author: 'Mathieu Tranchida',
-      cols: 1,
+      cols: 2,
     },
     {
       img: image6,
@@ -149,6 +149,7 @@ const tileData = [
       img: image22,
       author: 'Mathieu Tranchida',
       cols: 1,
+      title: 'Mont Tremblant, Sunday Afternoon',
     },
     {
       img: image23,

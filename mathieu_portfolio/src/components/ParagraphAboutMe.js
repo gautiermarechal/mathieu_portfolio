@@ -7,6 +7,7 @@ import tileData from '../assets/TiledData_Action';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import imageMath from '../assets/photos/Mathieu_Profile.jpg';
 
 
 const useStyles = makeStyles( theme => ({
@@ -41,7 +42,6 @@ const useStyles = makeStyles( theme => ({
 
 export default function ParagraphAboutMe() {
     const classes = useStyles();
-    const imageMath = tileData[16].img;
     const theme = useTheme();
     const colMatches = useMediaQuery(theme.breakpoints.up('md'));
 
@@ -72,3 +72,5 @@ export default function ParagraphAboutMe() {
         </GridList>
     );
 }
+
+// Copyright 2020, Gautier Marechal, All rights reserved

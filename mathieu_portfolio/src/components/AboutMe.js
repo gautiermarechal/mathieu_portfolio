@@ -9,8 +9,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import IconButton from '@material-ui/core/IconButton';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as emailjs from 'emailjs-com';
+import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles( theme => ({
     root: {
@@ -49,6 +50,9 @@ const useStyles = makeStyles( theme => ({
         padding: theme.spacing(3),
         color: theme.palette.secondary,
     },
+    inputColor: {
+        color: green,
+    }
 }));
 
 const ColorButton1 = withStyles(theme => ({
@@ -56,7 +60,7 @@ const ColorButton1 = withStyles(theme => ({
       color: 'black',
       fontFamily: "'Rubik', sans-serif",
       height: '50px',
-      width: '70%',
+      width: '90%',
       margin: theme.spacing(2), 
       borderRadius: '0%',
       '&:hover': {
@@ -70,36 +74,114 @@ const ColorButton1 = withStyles(theme => ({
 
 export default function AboutMe() {
     const classes = useStyles();
+
     const [firstName, setFirstName] = useState('');
+    const [firstNameEntered, setFirstNameEntered] = useState(false);
+    const [firstNameError, setFirstNameError] = useState('');
+
     const [lastName, setLastName] = useState('');
+    const [lastNameEntered, setLastNameEntered] = useState(false);
+    const [lastNameError, setLastNameError] = useState();
+
     const [email, setEmail] = useState('');
+    const [emailIsValid, setEmailIsValid] = useState(false);
+    const [emailError, setEmailError] = useState();
+
     const [message, setMessage] = useState('');
+    const [messageEntered, setMessageEntered] = useState(false);
+    const [messageError, setmessageError] = useState('');
+
+    const [submitted, setSubmitted] = useState(false);
+
+    function handleEmailValidity(e) {
+        setEmail(e.target.value);
+        email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)? setEmailIsValid(true) : setEmailIsValid(false);
+
+    };
+
+    function handleFirstNameValidity(e){
+        setFirstName(e.target.value);
+        if(e.target.value === null || e.target.value === ''){
+            setFirstNameEntered(false);
+        }
+        else setFirstNameEntered(true);
+    };
+
+    function handleLastNameValidity(e){
+        setLastName(e.target.value);
+        if(e.target.value === null || e.target.value === ''){
+            setLastNameEntered(false);
+        }
+        else setLastNameEntered(true);
+    };
+
+    function handleMessageValidity(e){
+        setMessage(e.target.value);
+        if(e.target.value === null || e.target.value === ''){
+            setMessageEntered(false);
+        }
+        else setMessageEntered(true);
+    };
 
     function handleSubmit(e) {
         e.preventDefault();
+        console.log(firstName);
+        console.log(firstNameEntered);
+
+        if(emailIsValid){
+            setEmailError(null);
+        }
+        else{
+            setEmailError('Invalid email address.');
+        }
+        if(firstNameEntered){
+            setFirstNameError(null)
+        }
+        else{
+            setFirstNameError('Please enter your first name.')
+        }
+        if(lastNameEntered){
+            setLastNameError(null)
+        }
+        else{
+            setLastNameError('Please enter your last name.')
+        }
+        if(messageEntered){
+            setmessageError(null)
+        }
+        else{
+            setmessageError('Please enter your message.')
+        }
+
+        if(emailIsValid && firstNameEntered && lastNameEntered && messageEntered){
+            e.preventDefault();
         
-        let templateParams ={
-            from_name: email,
-            to_name: 'gaut.marechal@gmail.com',
-            message_html: message,
-            form_firstname: firstName,
-            form_lastname: lastName,
+            let templateParams ={
+                from_name: email,
+                to_name: 'gaut.marechal@gmail.com',
+                message_html: message,
+                form_firstname: firstName,
+                form_lastname: lastName,
+            }
+    
+            emailjs.send(
+                'gmail',
+                'template_WDXJtXKk',
+                templateParams,
+                'user_o37wsc4OLEGzp03XSyGed'
+            )
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function (error) {
+                console.log('FAILED...', error);
+            }
+            )
+    
+            resetForm();
+    
+            setSubmitted(true);
         }
 
-        emailjs.send(
-            'gmail',
-            'template_WDXJtXKk',
-            templateParams,
-            'user_o37wsc4OLEGzp03XSyGed'
-        )
-        .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-        }, function (error) {
-            console.log('FAILED...', error);
-        }
-        )
-
-        resetForm();
     }
 
     function resetForm() {
@@ -116,43 +198,52 @@ export default function AboutMe() {
         <Typography variant="h4" align="center" className={classes.title}>Contact Me</Typography>  
     <form className={classes.root} noValidate onSubmit={(e) => handleSubmit(e)}>   
         <TextField 
+        className={classes.inputColor}
         id="outlined-basic" 
         label="First Name" 
-        variant="outlined"
+        variant="standard"
+        required={true}
         value={firstName}
-        onChange={(event) => setFirstName(event.target.value)}/>
+        onChange={(event) => handleFirstNameValidity(event)}
+        helperText={firstNameError}/>
         <TextField 
         id="outlined-basic" 
         label="Last Name" 
-        variant="outlined"
+        variant="standard"
+        required={true}
         value={lastName}
-        onChange={(event) => setLastName(event.target.value)}/>
+        onChange={(event) => handleLastNameValidity(event)}
+        helperText={lastNameError}/>
         <br/>
         <TextField 
         id="outlined-basic" 
         label="Email" 
-        variant="outlined"
+        variant="standard"
+        required={true}
         value={email}
-        onChange={(event) => setEmail(event.target.value)}/>
+        onChange={(event) => handleEmailValidity(event)}
+        helperText={emailError}/>
         <br/>
         <TextField 
         className={classes.messageField}
         id="outlined-basic" 
         label="Message" 
-        variant="outlined" 
+        variant="standard" 
+        required={true}
         multiline
-        rows="8"
+        rows="10"
         value={message}
-        onChange={(event) => setMessage(event.target.value)}
-        />
-    <ColorButton1 type={"submit"}>Send</ColorButton1>
+        onChange={(event) => handleMessageValidity(event)}
+        helperText={messageError}/>
+        <ColorButton1 type={"submit"}>Send</ColorButton1>
     </form>
     </Paper>
         <div className={classes.iconsGroup}>
-            <Link to="https://www.instagram.com/mathieutranchida/"><IconButton><InstagramIcon className={classes.icons}/></IconButton></Link>
-            <Link to="/linkedin"><IconButton><LinkedInIcon className={classes.icons}/></IconButton></Link>
-            <Link to="/youtube"><IconButton><YouTubeIcon className={classes.icons}/></IconButton></Link>
+            <a href="https://www.instagram.com/mathieutranchida/" target="_blank"><IconButton><InstagramIcon className={classes.icons}/></IconButton></a>
+            <a href="https://www.linkedin.com/in/mathieu-tranchida-17765212b/" target="_blank"><IconButton><LinkedInIcon className={classes.icons}/></IconButton></a>
+            <a href="https://www.youtube.com/user/MrIntelx9" target="_blank"><IconButton><YouTubeIcon className={classes.icons}/></IconButton></a>
         </div>
+    {submitted ? <Redirect to="/email-sent"/> : null}
     </React.Fragment>
     );
 }

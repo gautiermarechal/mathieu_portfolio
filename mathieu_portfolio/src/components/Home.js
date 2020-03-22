@@ -6,7 +6,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import tileData from '../assets/TiledData_Action';
+import tileData from '../assets/TiledData_HomeGrid';
 
 
 const useStyles = makeStyles(theme => ({
@@ -60,10 +60,10 @@ export default function Home(props) {
   const [paperTitle, setPaperTitle] = useState([
     'Action',
     'Landscapes',
-    'Motions',
+    'Lifestyle',
     'About Me'
 ]);
-const linkRoutes = ['/action', '/landscapes', '/motions', '/about-me'];
+const linkRoutes = ['/action', '/landscapes', '/lifestyle', '/about-me'];
 
   const getGridListCol = () => {
     if(colMatches){

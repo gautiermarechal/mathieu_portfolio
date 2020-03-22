@@ -105,7 +105,7 @@ export default function TemporaryDrawer() {
             />
           </ListItem>
         </Link>
-        <Link to="/motions" className={classes.smallTitle}>
+        <Link to="/lifestyle" className={classes.smallTitle}>
           <ListItem key={"Motions"}>
             <ListItemText primary={
               <ColorButton1>
@@ -131,9 +131,9 @@ export default function TemporaryDrawer() {
         </Link>
         <ListItem>
         <div className={classes.iconGroup}>
-        <Link to="/instagram"><IconButton><InstagramIcon/></IconButton></Link>
-        <Link to="/linkedin"><IconButton><LinkedInIcon/></IconButton></Link>
-        <Link to="/youtube"><IconButton><YouTubeIcon/></IconButton></Link>
+        <a href="https://www.instagram.com/mathieutranchida/" target="_blank"><IconButton><InstagramIcon/></IconButton></a>
+        <a href="https://www.linkedin.com/in/mathieu-tranchida-17765212b/" target="_blank"><IconButton><LinkedInIcon/></IconButton></a>
+        <a href="https://www.youtube.com/user/MrIntelx9" target="_blank"><IconButton><YouTubeIcon/></IconButton></a>
         </div>
         </ListItem>
       </List>

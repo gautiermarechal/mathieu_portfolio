@@ -16,3 +16,4 @@ export default function Footer() {
       </Box>
   );
 }
+// Copyright 2020, Gautier Marechal, All rights reserved

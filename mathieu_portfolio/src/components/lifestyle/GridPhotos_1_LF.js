@@ -94,8 +94,8 @@ export default function GridPhotos_1(props) {
   
   return (
     <div className={classes.root}>
-      <GridList cellHeight={500} className={classes.gridList} cols={getGridListCol()} spacing={0}>
-        {tileData.slice(6,12).map(tile => (
+      <GridList cellHeight={700} className={classes.gridList} cols={getGridListCol()} spacing={0}>
+        {tileData.slice(0,6).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage} onClick={showInfo? () => hidePhotoInfo() : () => showPhotoInfo()}>
             <img src={tile.img} alt={tile.title} />
             {infoContent}

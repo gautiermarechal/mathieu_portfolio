@@ -8,6 +8,8 @@ import tileData from '../../assets/TiledData_Action';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import Typography from '@material-ui/core/Typography';
+import Grow from '@material-ui/core/Grow';
+import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,7 +47,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function GridPhotos_2() {
   const classes = useStyles();
-  const largePhoto = tileData[0];
+  const largePhoto = tileData[21];
   const [showInfo, setShowInfo] = useState(false);
   const [infoContent, setInfoContent] = useState(
     <GridListTileBar
@@ -66,6 +68,7 @@ export default function GridPhotos_2() {
 function showPhotoInfo(){
   if(!showInfo){
     setInfoContent(
+    <Grow in={!showInfo}>
     <GridListTileBar
           className={classes.infoBarOpened}
           title={
@@ -84,6 +87,7 @@ function showPhotoInfo(){
             </IconButton>
           }
           />
+      </Grow>
       );
       setShowInfo(true);
     } 
@@ -92,6 +96,7 @@ function showPhotoInfo(){
 function hidePhotoInfo(){
   if(showPhotoInfo){
     setInfoContent(
+      <Fade in={showPhotoInfo}>
       <GridListTileBar
             className={classes.infoBar}
             title={
@@ -105,13 +110,14 @@ function hidePhotoInfo(){
               </IconButton>
             }
             />
+      </Fade>
     );
   }
 }
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={800} className={classes.gridList} cols={1} spacing={0}>
+      <GridList cellHeight={650} className={classes.gridList} cols={1} spacing={0}>
         {<GridListTile key={largePhoto.img} cols={largePhoto.cols || 1}>
             <img src={largePhoto.img} alt={largePhoto.title} />
             {infoContent}

@@ -15,6 +15,7 @@ import GridPhotos_1_A from './components/action/GridPhotos_1_A';
 import GridPhotos_2_A from './components/action/Grid_Photos_2_A';
 import Grid_Photos_Rows_A from './components/action/Grid_Photos_Rows_A';
 import GridPhotos_4_A from './components/action/GridPhotos_4_A';
+import Grid_Photos_Ski_Trick from './components/action/Grid_Photos_Ski_Trick';
 //--------------------------------------------------------------------
 
 //LANDSCAPES PAGE IMPORTS -----------------------------------------------
@@ -37,6 +38,10 @@ import AboutMe from './components/AboutMe';
 
 //COPYRIGHT IMPORTS -----------------------------------------------
 import CopyrightClick from './assets/CopyrightClick';
+//--------------------------------------------------------------------
+
+//EMAIL SENT IMPORTS -----------------------------------------------
+import EmailSent from './components/EmailSent';
 //--------------------------------------------------------------------
 
 const useStyles = makeStyles( theme => ({
@@ -65,6 +70,7 @@ function App() {
       <Route path="/action">
         <AppNavBar/>
         <GridPhotos_1_A/>
+        <Grid_Photos_Ski_Trick/>
         <GridPhotos_2_A/>
         <Grid_Photos_Rows_A/>
         <GridPhotos_4_A/>
@@ -78,7 +84,7 @@ function App() {
         <GridPhotos_4_LD/>
         <Footer/>
       </Route>
-      <Route path="/motions">
+      <Route path="/lifestyle">
         <AppNavBar/>
         <GridPhotos_1_LF/>
         <GridPhotos_2_LF/>
@@ -89,6 +95,11 @@ function App() {
       <Route path="/about-me">
         <AppNavBar/>
         <AboutMe/>
+        <Footer/>
+      </Route>
+      <Route path="/email-sent">
+        <AppNavBar/>
+        <EmailSent/>
         <Footer/>
       </Route>
     </Route>

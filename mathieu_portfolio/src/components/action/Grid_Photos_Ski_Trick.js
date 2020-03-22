@@ -33,17 +33,6 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     fontFamily: "'Rubik', sans-serif",
   },
-  endPageTitle: {
-    textAlign: 'center',
-    verticalAlign: 'middle',
-    height: '1000px !important',
-    width: '1000px',
-    transform: 'rotate(46deg)',
-    marginLeft: theme.spacing(-2),
-    position: 'absolute',
-    left: '-300px',
-    top: '-300px'
-  },
 }));
 
 export default function GridPhotos_1(props) {
@@ -107,28 +96,13 @@ export default function GridPhotos_1(props) {
   
   return (
     <div className={classes.root}>
-      <GridList cellHeight={650} className={classes.gridList} cols={getGridListCol()} spacing={0}>
-        {tileData.slice(2,20).map(tile => (
+      <GridList cellHeight={800} className={classes.gridList} cols={getGridListCol()} spacing={0}>
+        {tileData.slice(0,2).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage} onMouseEnter={showInfo? () => hidePhotoInfo(counter) : () => showPhotoInfo(counter)}>
             <img src={tile.img} alt={tile.title} />
             {/* {infoContent} */}
           </GridListTile>
         ),counter++)}
-        <GridListTile><Typography variant="h1" className={classes.endPageTitle}>
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel
-        ParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallelParallel</Typography></GridListTile>
       </GridList>
     </div>
   );

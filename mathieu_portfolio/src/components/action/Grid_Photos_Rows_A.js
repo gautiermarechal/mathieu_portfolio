@@ -30,13 +30,24 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "'Rubik', sans-serif",
     textAlign: 'center',
     verticalAlign: 'middle',
-    margin: theme.spacing(5),
-    paddingTop: theme.spacing(10),
-    height: '200px !important',
+    margin: theme.spacing(0),
+    paddingTop: theme.spacing(5),
+    height: '100px !important',
     lineHeight: '200px ',
     [theme.breakpoints.down('md')]: {
       lineHeight: 'none',
       paddingTop: theme.spacing(0),
+    },
+    endPageTitle: {
+      textAlign: 'center',
+      verticalAlign: 'middle',
+      height: '1000px !important',
+      width: '1000px',
+      transform: 'rotate(46deg)',
+      marginLeft: theme.spacing(-2),
+      position: 'absolute',
+      left: '-300px',
+      top: '-300px'
     },
   },
 }));
@@ -48,8 +59,8 @@ export default function GridPhotos_Rows() {
     <div className={classes.root}>
     <Grid container>
     <Grid item md={6} spacing={0}>
-    <GridList cellHeight={500} className={classes.gridList} cols={1} spacing={0}>
-        {tileData.slice(19,22).map(tile => (
+    <GridList cellHeight={600} className={classes.gridList} cols={1} spacing={0}>
+        {tileData.slice(22,27).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
           </GridListTile>
@@ -58,13 +69,27 @@ export default function GridPhotos_Rows() {
     </Grid>
     <Grid item md={6} spacing={0}>
     <GridList cellHeight={400} className={classes.gridList} cols={1} spacing={0}>
-        {tileData.slice(24,27).map(tile => (
+        {tileData.slice(28,34).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
           </GridListTile>
         ))}
-        <Typography variant="h4" className={classes.title}>Ski. Photos. Life.</Typography>
-      </GridList>
+        <GridListTile rows={1.5}>
+        <Typography variant="h1" className={classes.endPageTitle}>
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        SteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteepSteep
+        </Typography>
+        </GridListTile>
+        </GridList>
     </Grid>
     </Grid>
     </div>

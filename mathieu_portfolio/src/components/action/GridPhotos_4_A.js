@@ -6,6 +6,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import tileData from '../../assets/TiledData_Action';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,6 +28,17 @@ const useStyles = makeStyles(theme => ({
     background:
       'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
+  endPageTitle: {
+    textAlign: 'center',
+    verticalAlign: 'middle',
+    height: '1000px !important',
+    width: '1000px',
+    transform: 'rotate(46deg)',
+    marginLeft: theme.spacing(-2),
+    position: 'absolute',
+    left: '-300px',
+    top: '-300px'
+  },
 }));
 
 export default function GridPhotos_1() {
@@ -45,7 +57,7 @@ export default function GridPhotos_1() {
   return (
     <div className={classes.root}>
       <GridList cellHeight={500} className={classes.gridList} cols={getGridListCol()} spacing={0}>
-        {tileData.slice(12,18).map(tile => (
+        {tileData.slice(35).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
@@ -54,7 +66,31 @@ export default function GridPhotos_1() {
             }}/>
           </GridListTile>
         ))}
-        {/* <li><Typography variant="h2">Hello</Typography></li> */}
+        <GridListTile><Typography variant="h2" className={classes.endPageTitle}>
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing
+        ClimbingClimbingClimbingClimbingClimbingClimbingClimbingClimbing</Typography></GridListTile>
       </GridList>
     </div>
   );
