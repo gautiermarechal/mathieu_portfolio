@@ -12,12 +12,18 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import IconButton from '@material-ui/core/IconButton';
+import Mathieu_Logo from '../assets/Logo_White_Mathieu_Tranchida.png';
+
 
 const useStyles = makeStyles({
+  root: {
+    backgroundColor: 'black',
+  },
   list: {
     width: 250,
     fontFamily: "'Rubik', sans-serif",
     textDecoration: 'none !important',
+    backgroundColor: 'black',
   },
   fullList: {
     width: 'auto',
@@ -26,6 +32,7 @@ const useStyles = makeStyles({
     float: 'right',
     marginTop: '20px',
     marginBottom: '20px',
+    color: 'white',
   },
   iconGroup: {
     margin: '0 auto',
@@ -39,12 +46,12 @@ const useStyles = makeStyles({
 
 const ColorButton1 = withStyles(theme => ({
   root: {
-    color: 'black',
+    color: 'white',
     fontFamily: "'Rubik', sans-serif",
     height: '100%',
     width: '100%', 
     borderRadius: '0%',
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     border: '5px none',
     borderRadius: '1%',
     '&:hover': {
@@ -122,7 +129,7 @@ export default function TemporaryDrawer() {
             <ListItemText primary={
               <ColorButton1>
               <Typography variant="h5" className={classes.smallTitle}>
-              About Me
+              Information
               </Typography>
               </ColorButton1>
             }
@@ -143,7 +150,7 @@ export default function TemporaryDrawer() {
   return (
     <div>
       <Button onClick={toggleDrawer('right', true)}  className={classes.menuButton}><MenuIcon/></Button>
-      <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
+      <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)} classes={{ paper: classes.root }}>
         {sideList('right')}
       </Drawer>
     </div>

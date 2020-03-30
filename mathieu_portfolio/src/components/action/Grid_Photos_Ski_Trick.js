@@ -33,6 +33,9 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     fontFamily: "'Rubik', sans-serif",
   },
+  actualImage: {
+    width: '100%',
+  },
 }));
 
 export default function GridPhotos_1(props) {
@@ -98,8 +101,8 @@ export default function GridPhotos_1(props) {
     <div className={classes.root}>
       <GridList cellHeight={800} className={classes.gridList} cols={getGridListCol()} spacing={0}>
         {tileData.slice(0,2).map(tile => (
-          <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage} onMouseEnter={showInfo? () => hidePhotoInfo(counter) : () => showPhotoInfo(counter)}>
-            <img src={tile.img} alt={tile.title} />
+          <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage}>
+            <img src={tile.img} alt={tile.title} className={classes.actualImage}/>
             {/* {infoContent} */}
           </GridListTile>
         ),counter++)}

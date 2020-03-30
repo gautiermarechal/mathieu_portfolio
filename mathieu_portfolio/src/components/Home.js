@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     // padding: '7.5px',
-    fontFamily: "'Rubik', sans-serif !important",
+    fontFamily: "'GT America Expanded Black !important",
   },
   gridList: {
     width: '100%',
@@ -61,7 +61,7 @@ export default function Home(props) {
     'Action',
     'Landscapes',
     'Lifestyle',
-    'About Me'
+    'Information'
 ]);
 const linkRoutes = ['/action', '/landscapes', '/lifestyle', '/about-me'];
 

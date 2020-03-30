@@ -13,4 +13,24 @@ html{
   background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
-@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'GT America Standard Regular';
+  src:  url('assets/fonts/GT-America-Standard-Regular.woff2') format('woff')
+}
+
+@font-face {
+  font-family: 'GT America Standard Regular Italic';
+  src:  url('assets/fonts/GT-America-Standard-Regular-Italic.woff2') format('woff')
+}
+
+@font-face {
+  font-family: 'GT America Exanded Black';
+  src:  url('assets/fonts/GT-America-Expanded-Black.woff2') format('woff')
+}
+
+@font-face {
+  font-family: 'GT America Exanded Black Italic';
+  src:  url('assets/fonts/GT-America-Expanded-Black-Italic.woff2') format('woff')
+}

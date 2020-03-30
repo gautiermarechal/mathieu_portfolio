@@ -20,7 +20,7 @@ const tileData = [
         img: image3,
         author: 'Mathieu Tranchida',
         cols: 1,
-    },
+    },      
       {
         img: image4,
         author: 'Mathieu Tranchida',

@@ -1,17 +1,15 @@
 import React, {useState} from 'react';
+import '../App.css';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import ParagraphAboutMe from './ParagraphAboutMe';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import IconButton from '@material-ui/core/IconButton';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import * as emailjs from 'emailjs-com';
-import { green } from '@material-ui/core/colors';
+import Testimonials from './Testimonials';
+import Collaboration from './Collaborations';
 
 const useStyles = makeStyles( theme => ({
     root: {
@@ -26,17 +24,19 @@ const useStyles = makeStyles( theme => ({
         padding: '40px',
     },
     messageField: {
-        // paddingBottom: '50px',
+        borderRadius: '0px',
+        width: '400px',
+        [theme.breakpoints.down('xs')]: {
+            width: '300px',
+        },
     },
     paper: {
-        margin: theme.spacing(10),
-        marginLeft: theme.spacing(30),
-        marginRight: theme.spacing(30),
+        margin: theme.spacing(0),
         backgroundColor: '#FFFFFF !important',
         minWidth: '320px',
         boxShadow: 'none',
         [theme.breakpoints.down(850)]: {
-            margin: theme.spacing(3),
+            margin: theme.spacing(0),
         },
         [theme.breakpoints.down(330)]: {
             margin: theme.spacing(0),
@@ -50,10 +50,29 @@ const useStyles = makeStyles( theme => ({
         padding: theme.spacing(3),
         color: theme.palette.secondary,
     },
-    inputColor: {
-        color: green,
+    inputField: {
+        width: '400px',
+        [theme.breakpoints.down('xs')]: {
+            width: '300px',
+        },
     }
 }));
+
+const CustomFields = withStyles({
+    root: {
+        '& .MuiFormControl-root': {
+            '& fieldset': {
+                borderColor: 'black',
+                borderRadius: '0px',
+              },
+        },
+        '& .MuiTextField-root': {
+            '& fieldset': {
+                borderColor: 'black',
+              },
+        },
+    }
+})(TextField);
 
 const ColorButton1 = withStyles(theme => ({
     root: {
@@ -194,11 +213,14 @@ export default function AboutMe() {
     return(
     <React.Fragment>
     <ParagraphAboutMe/>
+    <Testimonials/>
+    <Collaboration/>
     <Paper elevation={3} className={classes.paper}>
-        <Typography variant="h4" align="center" className={classes.title}>Contact Me</Typography>  
-    <form className={classes.root} noValidate onSubmit={(e) => handleSubmit(e)}>   
+        <Typography variant="h3" align="center" className={classes.title}>CONTACT ME</Typography>  
+        <Typography variant="h5" align="center" >Contact me if you want to book a shoot, buy a picture, chat or anything else</Typography>
+    <form className={classes.root} noValidate onSubmit={(e) => handleSubmit(e)}>
         <TextField 
-        className={classes.inputColor}
+        classes={{root: classes.inputField}}
         id="outlined-basic" 
         label="First Name" 
         variant="standard"
@@ -206,7 +228,9 @@ export default function AboutMe() {
         value={firstName}
         onChange={(event) => handleFirstNameValidity(event)}
         helperText={firstNameError}/>
+        <br/>
         <TextField 
+        classes={{root: classes.inputField}}
         id="outlined-basic" 
         label="Last Name" 
         variant="standard"
@@ -216,6 +240,7 @@ export default function AboutMe() {
         helperText={lastNameError}/>
         <br/>
         <TextField 
+        classes={{root: classes.inputField}}
         id="outlined-basic" 
         label="Email" 
         variant="standard"
@@ -224,25 +249,20 @@ export default function AboutMe() {
         onChange={(event) => handleEmailValidity(event)}
         helperText={emailError}/>
         <br/>
-        <TextField 
-        className={classes.messageField}
+        <CustomFields
+        classes={{root: classes.messageField}} 
         id="outlined-basic" 
         label="Message" 
-        variant="standard" 
+        variant="outlined" 
         required={true}
         multiline
-        rows="10"
+        rows="12"
         value={message}
         onChange={(event) => handleMessageValidity(event)}
         helperText={messageError}/>
         <ColorButton1 type={"submit"}>Send</ColorButton1>
     </form>
     </Paper>
-        <div className={classes.iconsGroup}>
-            <a href="https://www.instagram.com/mathieutranchida/" target="_blank"><IconButton><InstagramIcon className={classes.icons}/></IconButton></a>
-            <a href="https://www.linkedin.com/in/mathieu-tranchida-17765212b/" target="_blank"><IconButton><LinkedInIcon className={classes.icons}/></IconButton></a>
-            <a href="https://www.youtube.com/user/MrIntelx9" target="_blank"><IconButton><YouTubeIcon className={classes.icons}/></IconButton></a>
-        </div>
     {submitted ? <Redirect to="/email-sent"/> : null}
     </React.Fragment>
     );

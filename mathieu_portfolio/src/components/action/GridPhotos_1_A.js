@@ -22,8 +22,11 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
   },
-  itemImage: {
+  tile: {
     display: 'flex',
+    // position: 'relative',
+    // width: 'auto',
+    height: 'auto',
   },
   titleBar: {
     background:
@@ -43,6 +46,10 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     left: '-300px',
     top: '-300px'
+  },
+  actualImage: {
+    width: '100%',
+    
   },
 }));
 
@@ -107,10 +114,10 @@ export default function GridPhotos_1(props) {
   
   return (
     <div className={classes.root}>
-      <GridList cellHeight={650} className={classes.gridList} cols={getGridListCol()} spacing={0}>
+      <GridList cellHeight={'auto'} className={classes.gridList} cols={getGridListCol()} spacing={0}>
         {tileData.slice(2,20).map(tile => (
-          <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.itemImage} onMouseEnter={showInfo? () => hidePhotoInfo(counter) : () => showPhotoInfo(counter)}>
-            <img src={tile.img} alt={tile.title} />
+          <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.tile} onMouseEnter={showInfo? () => hidePhotoInfo(counter) : () => showPhotoInfo(counter)}>
+            <img src={tile.img} alt={tile.title} className={classes.actualImage}/>
             {/* {infoContent} */}
           </GridListTile>
         ),counter++)}

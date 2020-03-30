@@ -1,22 +1,17 @@
-import React from 'react';
-import {useState} from 'react';
-import { Route, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import Collapse from '@material-ui/core/Collapse';
 import Grid from '@material-ui/core/Grid';
 import BarDrawer from './BarDrawer';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import IconButton from '@material-ui/core/IconButton';
 import Mathieu_Logo from '../assets/Logo_White_Mathieu_Tranchida.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    height: '80px',
   },
   title: {
     flexGrow: 1,
@@ -31,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolBar: {
     flexGrow: 1,
-    minHeight: '100px',
+    minHeight: '80px',
   },
   appBar: {
     backgroundColor: '#000000',
@@ -43,8 +38,10 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     textDecoration: 'none',
     color: 'black',
-    height: '50px',
-    paddingTop: '15px',
+    height: '40px',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '20px',
+    },
   },
   sectionDesktop: {
     flexGrow: 1,
@@ -65,46 +62,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ColorButton1 = withStyles(theme => ({
-    root: {
-      color: 'white',
-      height: '100%',
-      width: '100%', 
-      borderRadius: '0%',
-      backgroundColor: '#000000',
-      border: '5px none',
-      borderRadius: '0',
-      '&:hover': {
-        backgroundColor: 'white',
-        color: 'black',
-        border: '5px none',
-        borderColor: 'black',
-      },
-    },
-  }))(Button);
-
 export default function AppNavBar() {
   const classes = useStyles();
+  const collapse = useState(false);
 
   const desktopMenu = (
     <Grid container spacing={0} justify="center">
                 <Grid item xs ={2}>
-                <Link to="/action" className={classes.smallTitle}>
-                <ColorButton1>
-                        <Typography variant="h5" className={classes.smallTitle}>
-                            Action
-                        </Typography>
-                </ColorButton1>
-                </Link>
                 </Grid>
                 <Grid item xs ={2}>
-                  <Link to="/landscapes" className={classes.smallTitle}>
-                    <ColorButton1>
-                    <Typography variant="h5" className={classes.smallTitle}>
-                        Landscapes
-                    </Typography>
-                    </ColorButton1>
-                    </Link>
                 </Grid>
                 <Grid item xs ={2}>
                 <Link to="/">
@@ -112,22 +78,8 @@ export default function AppNavBar() {
                 </Link>             
                 </Grid>
                 <Grid item xs ={2}>
-                  <Link to="/lifestyle" className={classes.smallTitle}>
-                    <ColorButton1>
-                    <Typography variant="h5" className={classes.smallTitle}>
-                        Lifestyle
-                    </Typography>
-                    </ColorButton1>
-                  </Link>
                 </Grid>
                 <Grid item xs ={2}>
-                  <Link to="/about-me" className={classes.smallTitle}>
-                    <ColorButton1>
-                    <Typography variant="h5" className={classes.smallTitle}>
-                      Information
-                    </Typography>
-                    </ColorButton1>
-                  </Link>
                 </Grid>
             </Grid>
   );

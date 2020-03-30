@@ -7,13 +7,13 @@ import image6 from './photos/action/0D1A5745.jpeg';
 import image7 from './photos/action/AllezUp_ATX_ZoeBeauchemin_Dec18 (1 of 1).jpeg';
 import image8 from './photos/action/ATX_2019Juin_AnnieWeir_InternetQuality (10 of 14).jpeg';
 import image9 from './photos/action/ATX_AllezUp_18Dec6_Zoé_InternetQuality (12 of 39).jpeg';
-import image10 from './photos/action/dm-3.jpeg';
+import image10 from './photos/action/GFSCamps_Summer2019_Day1_InternetQuality (36 of 88).jpeg';
 import image11 from './photos/action/Escalade_Rigaud_2019Juin31_Internet (7 of 17).jpeg';
 import image12 from './photos/action/Escalade_Rigaud_2019Juin31_Internet (10 of 17).jpeg';
 import image13 from './photos/action/FromSwitzerlandWithLove_SuperPark_Will&DM_MathieuTranchida_LD (6 of 13).jpeg';
 import image14 from './photos/action/GFS18_Remco.jpeg';
 import image15 from './photos/action/GFS18_SpaceX.jpeg';
-import image16 from './photos/action/GFSCamps_Summer2019_Day1_InternetQuality (36 of 88).jpeg';
+import image16 from './photos/action/dm-3.jpeg';
 import image17 from './photos/action/Kamouraska_ElmerLeung_Aug2019.jpeg';
 import image18 from './photos/action/Leysin_240220_Buldoz-4.jpeg';
 import image19 from './photos/action/Leysin_240220_Buldoz-11.jpeg';
@@ -41,192 +41,232 @@ import image38 from './photos/action/ZoeBeauchemin_OrfordBigWall (1 of 1).jpeg';
 
 const tileData = [
       {
-         img: image1,
-         author: 'Mathieu Tranchida',
-         cols: 1,
+        key: 0,
+        img: image1,
+        author: 'Mathieu Tranchida',
+        cols: 1,
+        title: 'title 1'
       },
       {
+        key: 1,
         img: image2,
         author: 'Mathieu Tranchida',
         cols: 1,
+        title: 'title 2'
      },
       {
+        key: 2,
         img: image3,
         author: 'Mathieu Tranchida',
         cols: 1,
     },
       {
+        key: 3,
         img: image4,
         author: 'Mathieu Tranchida',
         cols: 1,
     },
     {
+      key: 4,
       img: image5,
       author: 'Mathieu Tranchida',
-      cols: 2,
+      cols: 1,
     },
     {
+      key: 5,
       img: image6,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 6,
       img: image7,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 7,
       img: image8,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 8,
       img: image9,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 9,
       img: image10,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 10,
       img: image11,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 11,
       img: image12,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 12,
       img: image13,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 13,
       img: image14,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 14,
       img: image15,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 15,
       img: image16,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 16,
       img: image17,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 17,
       img: image18,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 18,
       img: image19,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 19,
       img: image20,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 20,
       img: image21,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 21,
       img: image22,
       author: 'Mathieu Tranchida',
       cols: 1,
       title: 'Mont Tremblant, Sunday Afternoon',
     },
     {
+      key: 22,
       img: image23,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 23,
       img: image24,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 24,
       img: image25,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 25,
       img: image26,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 26,
       img: image27,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 27,
       img: image28,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 28,
       img: image29,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 29,
       img: image30,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 30,
       img: image31,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 31,
       img: image32,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 32,
       img: image33,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 33,
       img: image34,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 34,
       img: image35,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 35,
       img: image36,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 36,
       img: image37,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
+      key: 37,
       img: image38,
       author: 'Mathieu Tranchida',
       cols: 1,
