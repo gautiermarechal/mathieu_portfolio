@@ -4,13 +4,12 @@ import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-
+import CssBaseline from '@material-ui/core/CssBaseline';
 // FONTS IMPORT --------------------------------------------------
 import GTAmerciaStandardRegular from './assets/fonts/GT-America-Standard-Regular.woff2';
 import GTAmerciaStandardRegularItalic from './assets/fonts/GT-America-Standard-Regular-Italic.woff2';
 import GTAmerciaExpandedBlack from './assets/fonts/GT-America-Expanded-Black.woff2';
 import GTAmerciaExpandedBlackItalic from './assets/fonts/GT-America-Expanded-Black-Italic.woff2';
-
 // ---------------------------------------------------------------
 
 //HOME PAGE IMPORTS --------------------------------------------------
@@ -56,6 +55,7 @@ import CopyrightClick from './assets/CopyrightClick';
 import EmailSent from './components/EmailSent';
 //--------------------------------------------------------------------
 
+// FONTS CONSTS ---------------------
 const gTAmerciaStandardRegular = {
   fontFamily: 'GT America Standard Regular',
   fontStyle: 'normal',
@@ -64,7 +64,7 @@ const gTAmerciaStandardRegular = {
   src: `
     local('GT America'),
     local('GT-America-Standard-Regular'),
-    url(${GTAmerciaStandardRegular}) format('woff')
+    url(${GTAmerciaStandardRegular}) format('woff2')
   `,
 };
 
@@ -76,7 +76,7 @@ const gTAmerciaStandardRegularItalic = {
   src: `
     local('GT America'),
     local('GT-America-Standard-Regular-Italic'),
-    url(${GTAmerciaStandardRegularItalic}) format('woff')
+    url(${GTAmerciaStandardRegularItalic}) format('woff2')
   `,
 };
 
@@ -88,7 +88,7 @@ const gTAmerciaExpandedBlack = {
   src: `
     local('GT America'),
     local('GT-America-Standard-Expanded-Black'),
-    url(${GTAmerciaExpandedBlack}) format('woff')
+    url(${GTAmerciaExpandedBlack}) format('woff2')
   `,
 };
 
@@ -100,17 +100,18 @@ const gTAmerciaExpandedBlackItalic = {
   src: `
     local('GT America'),
     local('GT-America-Standard-Expanded-Black-Italic'),
-    url(${GTAmerciaExpandedBlackItalic}) format('woff')
+    url(${GTAmerciaExpandedBlackItalic}) format('woff2')
   `,
 };
+//------------------------------------------------------------------
 
-
+//THEME FOR FONTS---------------------------------------------------
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
+      'GT America Expanded Black',
       'GT America Standard Regular',
       'GT America Standard Regular Italic',
-      'GT America Expanded Black',
       'GT America Expanded Black Italic',
     ].join(','),
   },
@@ -122,6 +123,8 @@ const theme = createMuiTheme({
     },
   },
 });
+//------------------------------------------------------------------
+
 
 console.log(theme.typography.fontFamily);
 
@@ -129,11 +132,11 @@ const useStyles = makeStyles( theme => ({
   app: {
     textAlign: 'center',
     backgroundColor: '#F5F5F5',
-    fontFamily: theme.typography.fontFamily['GT America Standard Regular'],
   },
   homeContainer: {
     height: '100%',
     width: '100%',
+    fontFamily: 'GT America Expanded Black',
   }
 }
 ));
@@ -142,7 +145,8 @@ function App() {
   const classes = useStyles();
   CopyrightClick();
   return (
-    <ThemeProvider theme={theme.typography.fontFamily['GT America Standard Regular']}>
+    <ThemeProvider theme={theme}>
+    <CssBaseline/>
     <BrowserRouter>
     <div className={classes.app}>
     <Route path="/">

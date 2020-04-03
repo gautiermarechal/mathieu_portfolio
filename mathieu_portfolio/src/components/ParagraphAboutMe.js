@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider,  } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Typography from '@material-ui/core/Typography';
@@ -9,6 +9,121 @@ import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import imageMath from '../assets/photos/Mathieu_Profile.jpg';
 import signatureMathAboutMe from '../assets/Signature_AboutMe.png';
+import { createMuiTheme } from '@material-ui/core/styles';
+// FONTS IMPORT --------------------------------------------------
+import GTAmerciaStandardRegular from '../assets/fonts/GT-America-Standard-Regular.woff2';
+import GTAmerciaStandardRegularItalic from '../assets/fonts/GT-America-Standard-Regular-Italic.woff2';
+import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Expanded-Black.woff2';
+import GTAmerciaExpandedBlackItalic from '../assets/fonts/GT-America-Expanded-Black-Italic.woff2';
+// ---------------------------------------------------------------
+
+const gTAmerciaStandardRegular = {
+    fontFamily: 'GT America Standard Regular',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+      local('GT America'),
+      local('GT-America-Standard-Regular'),
+      url(${GTAmerciaStandardRegular}) format('woff2')
+    `,
+  };
+  
+  const gTAmerciaStandardRegularItalic = {
+    fontFamily: 'GT America Standard Regular Italic',
+    fontStyle: 'italic',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+      local('GT America'),
+      local('GT-America-Standard-Regular-Italic'),
+      url(${GTAmerciaStandardRegularItalic}) format('woff2')
+    `,
+  };
+  
+  const gTAmerciaExpandedBlack = {
+    fontFamily: 'GT America Expanded Black',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+      local('GT America'),
+      local('GT-America-Standard-Expanded-Black'),
+      url(${GTAmerciaExpandedBlack}) format('woff2')
+    `,
+  };
+  
+  const gTAmerciaExpandedBlackItalic = {
+    fontFamily: 'GT America Expanded Black Italic',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+      local('GT America'),
+      local('GT-America-Standard-Expanded-Black-Italic'),
+      url(${GTAmerciaExpandedBlackItalic}) format('woff2')
+    `,
+  };
+
+const themeStandardRegular = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'GT America Standard Regular'
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [gTAmerciaStandardRegular],
+        },
+      },
+    },
+  });
+
+  const themeStandardRegularItalic = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'GT America Standard Regular Italic',
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [gTAmerciaStandardRegularItalic],
+        },
+      },
+    },
+  });
+
+const themeExpandedBlack = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'GT America Expanded Black',
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [gTAmerciaExpandedBlack],
+        },
+      },
+    },
+  });
+
+  const themeExpandedBlackItalic = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'GT America Expanded Black Italic',
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [gTAmerciaExpandedBlackItalic],
+        },
+      },
+    },
+  });
 
 
 const useStyles = makeStyles( theme => ({
@@ -57,16 +172,14 @@ const useStyles = makeStyles( theme => ({
         [theme.breakpoints.down('1088')]: {
             width: '100%',  
         },
-
     },
-    titleFont: {
-        fontFamily: 'GT America Expanded Black',
-    },
+    aboutMeTitleFont: {
+        fontFamily: 'GT America Standard Regular'
+    }
 }));
 
 export default function ParagraphAboutMe() {
     const classes = useStyles();
-    // const theme = useTheme();
     const theme = useTheme();
     const colMatches = useMediaQuery(theme.breakpoints.up('1100'));
     const heightMatches = useMediaQuery(theme.breakpoints.down('1100'));
@@ -74,10 +187,10 @@ export default function ParagraphAboutMe() {
 
     function changeTitle(){
         if(smallScreen) {
-            return "h4";
+            return "h5";
         }
         else {
-            return "h3";
+            return "h4";
         }
     }
 
@@ -98,16 +211,20 @@ export default function ParagraphAboutMe() {
     }
 
     return(
+        <ThemeProvider theme={themeStandardRegular}>
         <GridList className={classes.root} cellHeight={getGridListHeight()} spacing={0} cols={getGridListCol()}>
             <GridListTile>
                 <img src={imageMath} className={classes.mathImage}/>
             </GridListTile>
             <GridListTile className={classes.tileParagraph}>
                 <Box className={classes.paragraph}>
-                <Typography variant={changeTitle()} align={'left'} className={classes.titleFont}>
+                <ThemeProvider theme={themeExpandedBlackItalic}>
+                <Typography variant={changeTitle()} align={'left'}>
                     ABOUT ME
                 </Typography>
+                </ThemeProvider>
                 <br/>
+                <ThemeProvider theme={themeStandardRegular}>
                 <Typography variant="body1">
                 &emsp;&emsp;&emsp; My name is Mathieu Tranchida and I’m a photographer. I was born in France in 1998 and grew up in Switzerland. At a very young age, I discovered a passion for the mountains and extreme sports through ski movies. My friends and I loved it so much that started to film each other going off cliffs and doing tricks on skis. It was fun for a while, but I soon realized that I had more fun shooting pictures than getting hurt in front of the camera. Since that time, I never stopped taking pictures.
                 <br/>
@@ -121,10 +238,12 @@ export default function ParagraphAboutMe() {
                 &emsp;&emsp;&emsp; If you have any questions, interests or business inquiries, feel free to contact me through the “Info” section of the website. There, you will be able to find a list of companies I worked with, testimonials from professional athletes, and more…  For the rest, I’ll let my pictures speak for myself!
                 <br/>
                 </Typography>
+                </ThemeProvider>
                 <img src={signatureMathAboutMe} className={classes.mathSignature}/>
                 </Box>
             </GridListTile>
         </GridList>
+        </ThemeProvider>
     );
 }
 

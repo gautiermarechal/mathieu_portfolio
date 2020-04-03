@@ -1,6 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,11 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import BarDrawer from './BarDrawer';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import IconButton from '@material-ui/core/IconButton';
 import Mathieu_Logo from '../assets/Logo_White_Mathieu_Tranchida.png';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -49,14 +45,14 @@ const useStyles = makeStyles(theme => ({
   sectionDesktop: {
     flexGrow: 1,
     display: 'none',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('1100')]: {
       display: 'flex',
     },
   },
   sectionMobile: {
     flexGrow: 1,
     display: 'flex',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('1100')]: {
       display: 'none',
     },
   },
@@ -91,7 +87,7 @@ export default function AppNavBar() {
                 <Grid item xs ={2}>
                 <Link to="/action" className={classes.smallTitle}>
                 <ColorButton1>
-                        <Typography variant="h5" className={classes.smallTitle}>
+                        <Typography variant="h6" className={classes.smallTitle}>
                             Action
                         </Typography>
                 </ColorButton1>
@@ -100,7 +96,7 @@ export default function AppNavBar() {
                 <Grid item xs ={2}>
                   <Link to="/landscapes" className={classes.smallTitle}>
                     <ColorButton1>
-                    <Typography variant="h5" className={classes.smallTitle}>
+                    <Typography variant="h6" className={classes.smallTitle}>
                         Landscapes
                     </Typography>
                     </ColorButton1>
@@ -114,7 +110,7 @@ export default function AppNavBar() {
                 <Grid item xs ={2}>
                   <Link to="/lifestyle" className={classes.smallTitle}>
                     <ColorButton1>
-                    <Typography variant="h5" className={classes.smallTitle}>
+                    <Typography variant="h6" className={classes.smallTitle}>
                         Lifestyle
                     </Typography>
                     </ColorButton1>
@@ -123,7 +119,7 @@ export default function AppNavBar() {
                 <Grid item xs ={2}>
                   <Link to="/about-me" className={classes.smallTitle}>
                     <ColorButton1>
-                    <Typography variant="h5" className={classes.smallTitle}>
+                    <Typography variant="h6" className={classes.smallTitle}>
                       Information
                     </Typography>
                     </ColorButton1>

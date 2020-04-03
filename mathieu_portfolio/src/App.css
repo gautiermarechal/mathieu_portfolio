@@ -17,20 +17,20 @@ html{
 
 @font-face {
   font-family: 'GT America Standard Regular';
-  src:  url('assets/fonts/GT-America-Standard-Regular.woff2') format('woff')
+  src:  url('assets/fonts/GT-America-Standard-Regular.woff2')
 }
 
 @font-face {
   font-family: 'GT America Standard Regular Italic';
-  src:  url('assets/fonts/GT-America-Standard-Regular-Italic.woff2') format('woff')
+  src:  url('assets/fonts/GT-America-Standard-Regular-Italic.woff2')
 }
 
 @font-face {
   font-family: 'GT America Exanded Black';
-  src:  url('assets/fonts/GT-America-Expanded-Black.woff2') format('woff')
+  src:  url('assets/fonts/GT-America-Expanded-Black.woff2') 
 }
 
 @font-face {
   font-family: 'GT America Exanded Black Italic';
-  src:  url('assets/fonts/GT-America-Expanded-Black-Italic.woff2') format('woff')
+  src:  url('assets/fonts/GT-America-Expanded-Black-Italic.woff2')
 }

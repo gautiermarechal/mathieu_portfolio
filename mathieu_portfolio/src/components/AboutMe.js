@@ -10,6 +10,123 @@ import { Redirect } from 'react-router-dom';
 import * as emailjs from 'emailjs-com';
 import Testimonials from './Testimonials';
 import Collaboration from './Collaborations';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+// FONTS IMPORT --------------------------------------------------
+import GTAmerciaStandardRegular from '../assets/fonts/GT-America-Standard-Regular.woff2';
+import GTAmerciaStandardRegularItalic from '../assets/fonts/GT-America-Standard-Regular-Italic.woff2';
+import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Expanded-Black.woff2';
+import GTAmerciaExpandedBlackItalic from '../assets/fonts/GT-America-Expanded-Black-Italic.woff2';
+// ---------------------------------------------------------------
+
+const gTAmerciaStandardRegular = {
+    fontFamily: 'GT America Standard Regular',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+      local('GT America'),
+      local('GT-America-Standard-Regular'),
+      url(${GTAmerciaStandardRegular}) format('woff2')
+    `,
+  };
+  
+  const gTAmerciaStandardRegularItalic = {
+    fontFamily: 'GT America Standard Regular Italic',
+    fontStyle: 'italic',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+      local('GT America'),
+      local('GT-America-Standard-Regular-Italic'),
+      url(${GTAmerciaStandardRegularItalic}) format('woff2')
+    `,
+  };
+  
+  const gTAmerciaExpandedBlack = {
+    fontFamily: 'GT America Expanded Black',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+      local('GT America'),
+      local('GT-America-Standard-Expanded-Black'),
+      url(${GTAmerciaExpandedBlack}) format('woff2')
+    `,
+  };
+  
+  const gTAmerciaExpandedBlackItalic = {
+    fontFamily: 'GT America Expanded Black Italic',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+      local('GT America'),
+      local('GT-America-Standard-Expanded-Black-Italic'),
+      url(${GTAmerciaExpandedBlackItalic}) format('woff2')
+    `,
+  };
+
+const themeStandardRegular = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'GT America Standard Regular'
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [gTAmerciaStandardRegular],
+        },
+      },
+    },
+  });
+
+  const themeStandardRegularItalic = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'GT America Standard Regular Italic',
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [gTAmerciaStandardRegularItalic],
+        },
+      },
+    },
+  });
+
+  const themeExpandedBlack = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'GT America Expanded Black',
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [gTAmerciaExpandedBlack],
+        },
+      },
+    },
+  });
+
+  const themeExpandedBlackItalic = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'GT America Expanded Black Italic',
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [gTAmerciaExpandedBlackItalic],
+        },
+      },
+    },
+  });
 
 const useStyles = makeStyles( theme => ({
     root: {
@@ -211,13 +328,14 @@ export default function AboutMe() {
     }
 
     return(
+    <ThemeProvider theme ={themeStandardRegular}>
     <React.Fragment>
     <ParagraphAboutMe/>
     <Testimonials/>
-    <Collaboration/>
+    <ThemeProvider theme={themeExpandedBlack}><Collaboration/></ThemeProvider>
     <Paper elevation={3} className={classes.paper}>
-        <Typography variant="h3" align="center" className={classes.title}>CONTACT ME</Typography>  
-        <Typography variant="h5" align="center" >Contact me if you want to book a shoot, buy a picture, chat or anything else</Typography>
+        <ThemeProvider theme={themeExpandedBlack}><Typography variant="h3" align="center" className={classes.title}>CONTACT ME</Typography></ThemeProvider>
+        <ThemeProvider theme={themeStandardRegularItalic}><Typography variant="h5" align="center" >Contact me if you want to book a shoot, buy a picture, chat or anything else</Typography></ThemeProvider>
     <form className={classes.root} noValidate onSubmit={(e) => handleSubmit(e)}>
         <TextField 
         classes={{root: classes.inputField}}
@@ -265,5 +383,6 @@ export default function AboutMe() {
     </Paper>
     {submitted ? <Redirect to="/email-sent"/> : null}
     </React.Fragment>
+    </ThemeProvider>
     );
 }
