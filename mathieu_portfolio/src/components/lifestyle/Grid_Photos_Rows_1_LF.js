@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   actualImage: {
-    width: '100%',
+    width: '101%',
   },
   endTile: {
     height: '430px !important',

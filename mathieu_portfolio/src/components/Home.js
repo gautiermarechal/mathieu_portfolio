@@ -25,15 +25,6 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
   },
-  paper:{
-    display: 'flex',
-    flexWrap: 'wrap',
-    width: '100%',
-    height: 'auto',
-    backgroundColor: '#F4F4F4',
-    borderRadius: '10px',
-    boxShadow: 'none',
-  },
   titleHeader: {
     padding: '100px 75px',
   },
@@ -49,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   actualImage: {
-    width: '100%',
+    width: '101%',
   },
 }));
 

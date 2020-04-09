@@ -33,7 +33,7 @@ const useStyles = makeStyles({
   menuButton: {
     float: 'right',
     marginTop: '30px',
-    marginBottom: '30px',
+    marginBottom: '25px',
     color: 'white',
   },
   iconGroup: {
@@ -148,7 +148,7 @@ export default function TemporaryDrawer() {
             <ListItemText primary={
               <ColorButton1>
               <Typography variant="h6" className={classes.smallTitle}>
-              Motions
+              Lifestyle
               </Typography>
               </ColorButton1>
             }
