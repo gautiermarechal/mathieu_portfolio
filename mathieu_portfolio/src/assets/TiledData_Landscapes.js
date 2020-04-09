@@ -21,6 +21,8 @@ import image20 from './photos/landscapes/TignesNoel18_InternetQuality (2 of 5).j
 import image21 from './photos/landscapes/Vancouver landscape - Stage 3.jpeg';
 import image22 from './photos/landscapes/Vancouver_Tree_May19.jpeg';
 import image23 from './photos/landscapes/Whistler_2019May_LD (32 of 78).jpeg';
+import image24 from './photos/landscapes/IMG_1076.jpeg';
+import image25 from './photos/landscapes/IMG_1077.jpeg';
 
 
 
@@ -162,6 +164,18 @@ const tileData = [
     {
       key: 22,
       img: image23,
+      author: 'Mathieu Tranchida',
+      cols: 1,
+    },
+    {
+      key: 23,
+      img: image24,
+      author: 'Mathieu Tranchida',
+      cols: 1,
+    },
+    {
+      key: 24,
+      img: image25,
       author: 'Mathieu Tranchida',
       cols: 1,
     },

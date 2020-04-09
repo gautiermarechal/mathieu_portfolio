@@ -8,11 +8,29 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import BarDrawer from './BarDrawer';
 import Mathieu_Logo from '../assets/Logo_White_Mathieu_Tranchida.png';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
+
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
 
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    height: '95px',
   },
   title: {
     flexGrow: 1,
@@ -27,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolBar: {
     flexGrow: 1,
-    minHeight: '100px',
+    height: '95px',
   },
   appBar: {
     backgroundColor: '#000000',
@@ -39,8 +57,9 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     textDecoration: 'none',
     color: 'black',
-    height: '50px',
+    height: '95px',
     paddingTop: '15px',
+    paddingBottom: '15px',
   },
   sectionDesktop: {
     flexGrow: 1,
@@ -59,6 +78,9 @@ const useStyles = makeStyles(theme => ({
   iconGroup: {
     marginTop: '8px',
   },
+  grid: {
+    height: '95px',
+  }
 }));
 
 const ColorButton1 = withStyles(theme => ({
@@ -68,23 +90,23 @@ const ColorButton1 = withStyles(theme => ({
       width: '100%', 
       borderRadius: '0%',
       backgroundColor: '#000000',
-      border: '5px none',
+      border: '0px',
       borderRadius: '0',
       '&:hover': {
         backgroundColor: 'white',
         color: 'black',
-        border: '5px none',
+        border: '0px',
         borderColor: 'black',
       },
     },
   }))(Button);
 
-export default function AppNavBar() {
+export default function AppNavBar(props) {
   const classes = useStyles();
 
   const desktopMenu = (
-    <Grid container spacing={0} justify="center">
-                <Grid item xs ={2}>
+    <Grid container spacing={0} justify="center" className={classes.grid}>
+                <Grid item xs ={2} style={{height: '95px'}}>
                 <Link to="/action" className={classes.smallTitle}>
                 <ColorButton1>
                         <Typography variant="h6" className={classes.smallTitle}>
@@ -93,7 +115,7 @@ export default function AppNavBar() {
                 </ColorButton1>
                 </Link>
                 </Grid>
-                <Grid item xs ={2}>
+                <Grid item xs ={2} style={{height: '95px'}}>
                   <Link to="/landscapes" className={classes.smallTitle}>
                     <ColorButton1>
                     <Typography variant="h6" className={classes.smallTitle}>
@@ -102,12 +124,12 @@ export default function AppNavBar() {
                     </ColorButton1>
                     </Link>
                 </Grid>
-                <Grid item xs ={2}>
+                <Grid item xs ={2} style={{height: '95px'}}>
                 <Link to="/">
                       <img src={Mathieu_Logo} className={classes.logo}/>
                 </Link>             
                 </Grid>
-                <Grid item xs ={2}>
+                <Grid item xs ={2} style={{height: '95px'}}>
                   <Link to="/lifestyle" className={classes.smallTitle}>
                     <ColorButton1>
                     <Typography variant="h6" className={classes.smallTitle}>
@@ -116,7 +138,7 @@ export default function AppNavBar() {
                     </ColorButton1>
                   </Link>
                 </Grid>
-                <Grid item xs ={2}>
+                <Grid item xs ={2} style={{height: '95px'}}>
                   <Link to="/about-me" className={classes.smallTitle}>
                     <ColorButton1>
                     <Typography variant="h6" className={classes.smallTitle}>
@@ -142,7 +164,8 @@ export default function AppNavBar() {
   );
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+      <HideOnScroll {...props}>
+      <AppBar className={classes.appBar}>
         <Toolbar  className={classes.toolBar}>
           <div className={classes.sectionDesktop}>
             {desktopMenu}
@@ -152,6 +175,7 @@ export default function AppNavBar() {
           </div>
         </Toolbar>
       </AppBar>
+      </HideOnScroll>
     </div>
   );
 }

@@ -13,7 +13,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // FONTS IMPORT --------------------------------------------------
 import GTAmerciaStandardRegular from '../assets/fonts/GT-America-Standard-Regular.woff2';
 import GTAmerciaStandardRegularItalic from '../assets/fonts/GT-America-Standard-Regular-Italic.woff2';
-import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Expanded-Black.woff2';
+import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Extended-Black.woff2';
 import GTAmerciaExpandedBlackItalic from '../assets/fonts/GT-America-Expanded-Black-Italic.woff2';
 // ---------------------------------------------------------------
 
@@ -42,13 +42,13 @@ const gTAmerciaStandardRegular = {
   };
   
   const gTAmerciaExpandedBlack = {
-    fontFamily: 'GT America Expanded Black',
+    fontFamily: 'GT America Extended Black',
     fontStyle: 'normal',
     fontDisplay: 'swap',
     fontWeight: 400,
     src: `
       local('GT America'),
-      local('GT-America-Standard-Expanded-Black'),
+      local('GT-America-Extended-Black'),
       url(${GTAmerciaExpandedBlack}) format('woff2')
     `,
   };
@@ -187,10 +187,10 @@ export default function ParagraphAboutMe() {
 
     function changeTitle(){
         if(smallScreen) {
-            return "h5";
+            return "h6";
         }
         else {
-            return "h4";
+            return "h5";
         }
     }
 

@@ -12,11 +12,10 @@ import Testimonials from './Testimonials';
 import Collaboration from './Collaborations';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 // FONTS IMPORT --------------------------------------------------
 import GTAmerciaStandardRegular from '../assets/fonts/GT-America-Standard-Regular.woff2';
 import GTAmerciaStandardRegularItalic from '../assets/fonts/GT-America-Standard-Regular-Italic.woff2';
-import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Expanded-Black.woff2';
+import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Extended-Black.woff2';
 import GTAmerciaExpandedBlackItalic from '../assets/fonts/GT-America-Expanded-Black-Italic.woff2';
 // ---------------------------------------------------------------
 
@@ -45,13 +44,13 @@ const gTAmerciaStandardRegular = {
   };
   
   const gTAmerciaExpandedBlack = {
-    fontFamily: 'GT America Expanded Black',
+    fontFamily: 'GT America Extended Black',
     fontStyle: 'normal',
     fontDisplay: 'swap',
     fontWeight: 400,
     src: `
       local('GT America'),
-      local('GT-America-Standard-Expanded-Black'),
+      local('GT-America-Extended-Black'),
       url(${GTAmerciaExpandedBlack}) format('woff2')
     `,
   };
@@ -101,28 +100,13 @@ const themeStandardRegular = createMuiTheme({
   const themeExpandedBlack = createMuiTheme({
     typography: {
       fontFamily: [
-        'GT America Expanded Black',
+        'GT America Extended Black',
       ].join(','),
     },
     overrides: {
       MuiCssBaseline: {
         '@global': {
           '@font-face': [gTAmerciaExpandedBlack],
-        },
-      },
-    },
-  });
-
-  const themeExpandedBlackItalic = createMuiTheme({
-    typography: {
-      fontFamily: [
-        'GT America Expanded Black Italic',
-      ].join(','),
-    },
-    overrides: {
-      MuiCssBaseline: {
-        '@global': {
-          '@font-face': [gTAmerciaExpandedBlackItalic],
         },
       },
     },
@@ -135,17 +119,23 @@ const useStyles = makeStyles( theme => ({
         width: 300,
         textAlign: 'center',
         backgroundColor: 'white',
+        borderRadius: '0px',
         },
+        borderRadius: '0px',
     },
     title: {
         padding: '40px',
     },
     messageField: {
+        borderColor: 'black',
         borderRadius: '0px',
         width: '400px',
         [theme.breakpoints.down('xs')]: {
             width: '300px',
         },
+        '& .Mui-Paper-root': {
+          borderRadius: '0px',
+        }
     },
     paper: {
         margin: theme.spacing(0),
@@ -172,18 +162,16 @@ const useStyles = makeStyles( theme => ({
         [theme.breakpoints.down('xs')]: {
             width: '300px',
         },
-    }
+    },
 }));
 
 const CustomFields = withStyles({
     root: {
-        '& .MuiFormControl-root': {
-            '& fieldset': {
+        '.MuiFormControl-root': {
                 borderColor: 'black',
                 borderRadius: '0px',
-              },
         },
-        '& .MuiTextField-root': {
+        '.MuiTextField-root': {
             '& fieldset': {
                 borderColor: 'black',
               },
@@ -194,7 +182,6 @@ const CustomFields = withStyles({
 const ColorButton1 = withStyles(theme => ({
     root: {
       color: 'black',
-      fontFamily: "'Rubik', sans-serif",
       height: '50px',
       width: '90%',
       margin: theme.spacing(2), 
@@ -208,8 +195,8 @@ const ColorButton1 = withStyles(theme => ({
     },
   }))(Button);
 
-export default function AboutMe() {
-    const classes = useStyles();
+export default function AboutMe(props) {
+    const classes = useStyles(props);
 
     const [firstName, setFirstName] = useState('');
     const [firstNameEntered, setFirstNameEntered] = useState(false);
@@ -334,7 +321,7 @@ export default function AboutMe() {
     <Testimonials/>
     <ThemeProvider theme={themeExpandedBlack}><Collaboration/></ThemeProvider>
     <Paper elevation={3} className={classes.paper}>
-        <ThemeProvider theme={themeExpandedBlack}><Typography variant="h3" align="center" className={classes.title}>CONTACT ME</Typography></ThemeProvider>
+        <ThemeProvider theme={themeExpandedBlack}><Typography variant="h5" align="center" className={classes.title}>CONTACT ME</Typography></ThemeProvider>
         <ThemeProvider theme={themeStandardRegularItalic}><Typography variant="h5" align="center" >Contact me if you want to book a shoot, buy a picture, chat or anything else</Typography></ThemeProvider>
     <form className={classes.root} noValidate onSubmit={(e) => handleSubmit(e)}>
         <TextField 
@@ -367,7 +354,7 @@ export default function AboutMe() {
         onChange={(event) => handleEmailValidity(event)}
         helperText={emailError}/>
         <br/>
-        <CustomFields
+        <TextField
         classes={{root: classes.messageField}} 
         id="outlined-basic" 
         label="Message" 
@@ -378,7 +365,7 @@ export default function AboutMe() {
         value={message}
         onChange={(event) => handleMessageValidity(event)}
         helperText={messageError}/>
-        <ColorButton1 type={"submit"}>Send</ColorButton1>
+        <ThemeProvider theme={themeExpandedBlack}><ColorButton1 type={"submit"}>Send</ColorButton1></ThemeProvider>
     </form>
     </Paper>
     {submitted ? <Redirect to="/email-sent"/> : null}

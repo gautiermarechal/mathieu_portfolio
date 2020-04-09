@@ -68,7 +68,7 @@ export default function GridPhotos_Rows_1_A() {
     <Grid container>
     <Grid item md={6} className={classes.leftList}>
     <GridList cellHeight={'auto'} className={classes.gridList} cols={1} spacing={0}>
-        {tileData.slice(0,10).map(tile => (
+        {tileData.slice(0,11).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.tile}>
             <img src={tile.img} alt={tile.title} className={classes.actualImage}/>
           </GridListTile>
@@ -77,7 +77,7 @@ export default function GridPhotos_Rows_1_A() {
     </Grid>
     <Grid item md={6} className={classes.rightList}>
     <GridList cellHeight={'auto'} className={classes.gridList} cols={1} spacing={0}>
-        {tileData.slice(10).map(tile => (
+        {tileData.slice(11).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.tile}>
             <img src={tile.img} alt={tile.title} className={classes.actualImage}/>
           </GridListTile>

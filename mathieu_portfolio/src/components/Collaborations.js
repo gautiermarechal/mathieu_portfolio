@@ -125,10 +125,10 @@ export default function Home_Paragraph(){
 
     function changeTitle(){
         if(smallScreen) {
-            return "h5";
+            return "h6";
         }
         else {
-            return "h3";
+            return "h5";
         }
     }
 

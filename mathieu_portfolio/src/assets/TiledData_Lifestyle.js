@@ -21,7 +21,8 @@ import image21 from './photos/lifestyle/SunshineVillage_2019May2_LD (11 of 19).j
 import image22 from './photos/lifestyle/ValDIsère_18Dec29_InternetQuality (1 of 20).jpeg';
 import image23 from './photos/lifestyle/Whistler_2019May_LD (25 of 78).jpeg';
 import image24 from './photos/lifestyle/Whistler_2019May_LD (41 of 78).jpeg';
-
+import image25 from './photos/lifestyle/FromSwitzerlandWithLove_SuperPark_Will&DM_MathieuTranchida_LD (1 of 13).jpeg';
+import image26 from './photos/lifestyle/FromSwitzerlandWithLove_Street_Day6_HautValais1_MathieuTranchida_LD (17 of 25).jpeg';
 
 
 
@@ -140,6 +141,16 @@ const tileData = [
     },
     {
       img: image24,
+      author: 'Mathieu Tranchida',
+      cols: 1,
+    },
+    {
+      img: image25,
+      author: 'Mathieu Tranchida',
+      cols: 1,
+    },
+    {
+      img: image26,
       author: 'Mathieu Tranchida',
       cols: 1,
     },

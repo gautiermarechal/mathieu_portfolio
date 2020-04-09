@@ -58,10 +58,10 @@ export default function Home(props) {
   const colMatches = useMediaQuery(theme.breakpoints.up('md'));
   const allImages = tileData;
   const [paperTitle, setPaperTitle] = useState([
-    'Action',
-    'Landscapes',
-    'Lifestyle',
-    'Information'
+    'ACTION',
+    'LANDSCAPES',
+    'LIFESTYLE',
+    'INFORMATION'
 ]);
 const linkRoutes = ['/action', '/landscapes', '/lifestyle', '/about-me'];
 

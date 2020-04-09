@@ -8,7 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 // FONTS IMPORT --------------------------------------------------
 import GTAmerciaStandardRegular from './assets/fonts/GT-America-Standard-Regular.woff2';
 import GTAmerciaStandardRegularItalic from './assets/fonts/GT-America-Standard-Regular-Italic.woff2';
-import GTAmerciaExpandedBlack from './assets/fonts/GT-America-Expanded-Black.woff2';
+import GTAmerciaExpandedBlack from './assets/fonts/GT-America-Extended-Black.woff2';
 import GTAmerciaExpandedBlackItalic from './assets/fonts/GT-America-Expanded-Black-Italic.woff2';
 // ---------------------------------------------------------------
 
@@ -81,13 +81,13 @@ const gTAmerciaStandardRegularItalic = {
 };
 
 const gTAmerciaExpandedBlack = {
-  fontFamily: 'GT America Expanded Black',
+  fontFamily: 'GT America Extended Black',
   fontStyle: 'normal',
   fontDisplay: 'swap',
   fontWeight: 400,
   src: `
     local('GT America'),
-    local('GT-America-Standard-Expanded-Black'),
+    local('GT-America-Extended-Black'),
     url(${GTAmerciaExpandedBlack}) format('woff2')
   `,
 };
@@ -109,7 +109,7 @@ const gTAmerciaExpandedBlackItalic = {
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
-      'GT America Expanded Black',
+      'GT America Extended Black',
       'GT America Standard Regular',
       'GT America Standard Regular Italic',
       'GT America Expanded Black Italic',
@@ -136,7 +136,7 @@ const useStyles = makeStyles( theme => ({
   homeContainer: {
     height: '100%',
     width: '100%',
-    fontFamily: 'GT America Expanded Black',
+    fontFamily: 'GT America Extended Black',
   }
 }
 ));

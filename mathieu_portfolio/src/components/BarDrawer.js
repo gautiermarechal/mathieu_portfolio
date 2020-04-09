@@ -12,7 +12,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import IconButton from '@material-ui/core/IconButton';
-import Mathieu_Logo from '../assets/Logo_White_Mathieu_Tranchida.png';
+import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Expanded-Black.woff2';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
 
 const useStyles = makeStyles({
@@ -30,16 +32,19 @@ const useStyles = makeStyles({
   },
   menuButton: {
     float: 'right',
-    marginTop: '20px',
-    marginBottom: '20px',
+    marginTop: '33px',
+    marginBottom: '33px',
     color: 'white',
   },
   iconGroup: {
     margin: '0 auto',
+    color: 'white'
+  },
+  iconStyle: {
+    color: 'white'
   },
   smallTitle: {
     flexGrow: 1,
-    fontFamily: "'Rubik', sans-serif",
     textDecoration: 'none',
   },
 });
@@ -62,6 +67,33 @@ const ColorButton1 = withStyles(theme => ({
     },
   },
 }))(Button);
+
+const gTAmerciaExpandedBlack = {
+  fontFamily: 'GT America Expanded Black',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+    local('GT America'),
+    local('GT-America-Standard-Expanded-Black'),
+    url(${GTAmerciaExpandedBlack}) format('woff2')
+  `,
+};
+
+const themeExpandedBlack = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'GT America Expanded Black'
+    ].join(','),
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '@font-face': [gTAmerciaExpandedBlack],
+      },
+    },
+  },
+});
 
 export default function TemporaryDrawer() {
   const classes = useStyles();
@@ -92,7 +124,7 @@ export default function TemporaryDrawer() {
           <ListItem key={"Action"}>
             <ListItemText primary={
               <ColorButton1>
-              <Typography variant="h5" className={classes.smallTitle}>
+              <Typography variant="h6" className={classes.smallTitle}>
               Action
               </Typography>
               </ColorButton1>
@@ -104,7 +136,7 @@ export default function TemporaryDrawer() {
           <ListItem key={"Landscapes"}>
             <ListItemText primary={
               <ColorButton1>
-              <Typography variant="h5" className={classes.smallTitle}>
+              <Typography variant="h6" className={classes.smallTitle}>
               Landscapes
               </Typography>
               </ColorButton1>
@@ -116,7 +148,7 @@ export default function TemporaryDrawer() {
           <ListItem key={"Motions"}>
             <ListItemText primary={
               <ColorButton1>
-              <Typography variant="h5" className={classes.smallTitle}>
+              <Typography variant="h6" className={classes.smallTitle}>
               Motions
               </Typography>
               </ColorButton1>
@@ -128,7 +160,7 @@ export default function TemporaryDrawer() {
           <ListItem key={"About-Me"}>
             <ListItemText primary={
               <ColorButton1>
-              <Typography variant="h5" className={classes.smallTitle}>
+              <Typography variant="h6" className={classes.smallTitle}>
               Information
               </Typography>
               </ColorButton1>
@@ -138,9 +170,9 @@ export default function TemporaryDrawer() {
         </Link>
         <ListItem>
         <div className={classes.iconGroup}>
-        <a href="https://www.instagram.com/mathieutranchida/" target="_blank"><IconButton><InstagramIcon/></IconButton></a>
-        <a href="https://www.linkedin.com/in/mathieu-tranchida-17765212b/" target="_blank"><IconButton><LinkedInIcon/></IconButton></a>
-        <a href="https://www.youtube.com/user/MrIntelx9" target="_blank"><IconButton><YouTubeIcon/></IconButton></a>
+        <a href="https://www.instagram.com/mathieutranchida/" target="_blank"><IconButton classes={{root: classes.iconStyle}}><InstagramIcon/></IconButton></a>
+        <a href="https://www.linkedin.com/in/mathieu-tranchida-17765212b/" target="_blank"><IconButton classes={{root: classes.iconStyle}}><LinkedInIcon/></IconButton></a>
+        <a href="https://www.youtube.com/user/MrIntelx9" target="_blank"><IconButton classes={{root: classes.iconStyle}}><YouTubeIcon/></IconButton></a>
         </div>
         </ListItem>
       </List>
@@ -148,11 +180,13 @@ export default function TemporaryDrawer() {
   );
 
   return (
+    <ThemeProvider theme={themeExpandedBlack}>
     <div>
       <Button onClick={toggleDrawer('right', true)}  className={classes.menuButton}><MenuIcon/></Button>
       <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)} classes={{ paper: classes.root }}>
         {sideList('right')}
       </Drawer>
     </div>
+    </ThemeProvider>
   );
 }

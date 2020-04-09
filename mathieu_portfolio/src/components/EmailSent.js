@@ -20,8 +20,8 @@ export default function EmailSent() {
     const classes = useStyles();
     return(
         <Container className={classes.root}>
-        <Typography variant="h4" className={classes.text}>
-            <Typography variant="h2">Success!</Typography>
+        <Typography variant="h5" className={classes.text}>
+            <Typography variant="h2">Email Sent!</Typography>
             Your email has been sent successfully. You have received a copy of your email
             If you cannot find it, be sure to check your spam folder. 
             Thanks for getting in touch with me, I'll reply as soon as possible!

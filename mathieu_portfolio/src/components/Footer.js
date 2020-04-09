@@ -6,20 +6,19 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import IconButton from '@material-ui/core/IconButton';
-import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
   iconGroup: {
-    marginTop: '8px',
+    marginTop: '10px',
     color: 'white',
-    padding: theme.spacing(2),
+    margin: theme.spacing(2),
     '&:hover': {
       backgroundColor: 'white',
       color: 'black'
     }
   },
   icon: {
-    fontSize: '3rem',
+    fontSize: '1rem',
   },
 }));
 
@@ -29,11 +28,12 @@ export default function Footer() {
       <Box>
         <Typography 
         component="body" 
-        style={{ backgroundColor: 'black', height: '200px', width: 'auto' }}
+        style={{ backgroundColor: 'black', height: 'auto', width: 'auto'}}
         align="center">
             <Typography 
-                variant="subtitle1" 
-                style={{color: 'white', paddingTop: '60px'}}>Mathieu Tranchida - 2020 All rights Reserved ©
+                variant="subtitle2" 
+                style={{color: 'white', paddingTop: '20px',  fontSize: "10px", paddingRight: '5px', paddingLeft: '5px'}}>
+            Mathieu Tranchida - 2020 All rights Reserved ©
             </Typography>
                   <div>
                   <a href="https://www.instagram.com/mathieutranchida/" target="_blank"><IconButton classes={{root: classes.iconGroup}}><InstagramIcon classes={{root: classes.icon}}/></IconButton></a>
