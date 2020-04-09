@@ -15,13 +15,11 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    // padding: '7.5px',
-    fontFamily: "'GT America Expanded Black !important",
+    flexGrow: 1,
+    padding: theme.spacing(0),
   },
   gridList: {
-    width: '100%',
-    height: '100%',
-    fontFamily: "'Rubik', sans-serif",
+    width: 'auto',
   },
   itemPaper: {
     width: '100%',
@@ -31,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     width: '100%',
-    height: '100%',
+    height: 'auto',
     backgroundColor: '#F4F4F4',
     borderRadius: '10px',
     boxShadow: 'none',
@@ -40,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     padding: '100px 75px',
   },
   tile:{
-    // borderRadius: '7px ',
+    display: 'flex'
   },
   tileBar: {
     backgroundColor: 'rgba(0,0,0, 0.3)',
@@ -49,6 +47,9 @@ const useStyles = makeStyles(theme => ({
       cursor: 'pointer',
       backgroundColor: 'rgba(0,0,0, 0.5)',
     }
+  },
+  actualImage: {
+    width: '100%',
   },
 }));
 
@@ -76,13 +77,13 @@ const linkRoutes = ['/action', '/landscapes', '/lifestyle', '/about-me'];
   return (
     <div className={classes.root}>
       <GridList 
-        cellHeight={335} 
+        cellHeight={'auto'} 
         className={classes.gridList} 
         cols={getGridListCol()} 
         spacing={0}>
         {paperTitle.map((title, index) => (
-          <GridListTile key={title} cols={1} classes={{tile: classes.tile}}>
-            <img src={allImages[index].img}></img>
+          <GridListTile key={title} cols={1} className={classes.tile}>
+            <img src={allImages[index].img} className={classes.actualImage}></img>
             <Link to={linkRoutes[index]} className={classes.link}>
               <GridListTileBar
               className={classes.tileBar}

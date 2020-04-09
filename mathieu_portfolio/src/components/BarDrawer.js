@@ -12,7 +12,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import IconButton from '@material-ui/core/IconButton';
-import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Expanded-Black.woff2';
+import GTAmerciaExpandedBlack from '../assets/fonts/GT-America-Extended-Black.woff2';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
@@ -32,8 +32,8 @@ const useStyles = makeStyles({
   },
   menuButton: {
     float: 'right',
-    marginTop: '33px',
-    marginBottom: '33px',
+    marginTop: '30px',
+    marginBottom: '30px',
     color: 'white',
   },
   iconGroup: {
@@ -52,7 +52,6 @@ const useStyles = makeStyles({
 const ColorButton1 = withStyles(theme => ({
   root: {
     color: 'white',
-    fontFamily: "'Rubik', sans-serif",
     height: '100%',
     width: '100%', 
     borderRadius: '0%',
@@ -69,13 +68,13 @@ const ColorButton1 = withStyles(theme => ({
 }))(Button);
 
 const gTAmerciaExpandedBlack = {
-  fontFamily: 'GT America Expanded Black',
+  fontFamily: 'GT America Extended Black',
   fontStyle: 'normal',
   fontDisplay: 'swap',
   fontWeight: 400,
   src: `
     local('GT America'),
-    local('GT-America-Standard-Expanded-Black'),
+    local('GT-America-Standard-Extended-Black'),
     url(${GTAmerciaExpandedBlack}) format('woff2')
   `,
 };
@@ -83,7 +82,7 @@ const gTAmerciaExpandedBlack = {
 const themeExpandedBlack = createMuiTheme({
   typography: {
     fontFamily: [
-      'GT America Expanded Black'
+      'GT America Extended Black'
     ].join(','),
   },
   overrides: {
