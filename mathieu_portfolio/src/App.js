@@ -134,7 +134,7 @@ const useStyles = makeStyles( theme => ({
     backgroundColor: '#F5F5F5',
   },
   homeContainer: {
-    height: '100%',
+    height: '100vh',
     width: '100%',
     fontFamily: 'GT America Extended Black',
   }

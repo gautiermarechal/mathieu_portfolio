@@ -11,7 +11,7 @@ import Mathieu_Logo from '../assets/Logo_White_Mathieu_Tranchida.png';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    height: '80px',
+    height: '95px',
   },
   title: {
     flexGrow: 1,
@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolBar: {
     flexGrow: 1,
-    minHeight: '80px',
+    minHeight: '95px',
   },
   appBar: {
     backgroundColor: '#000000',
@@ -38,10 +38,9 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     textDecoration: 'none',
     color: 'black',
-    height: '40px',
-    [theme.breakpoints.down('md')]: {
-      marginTop: '20px',
-    },
+    height: '95px',
+    paddingTop: '15px',
+    paddingBottom: '15px',
   },
   sectionDesktop: {
     flexGrow: 1,
