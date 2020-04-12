@@ -1,7 +1,7 @@
 import image1 from './photos/home/©MathieuTranchida_Web_Accueil_Action.jpg';
 import image2 from './photos/home/©MathieuTranchida_Web_Accueil_Landscape.jpg';
 import image3 from './photos/home/©MathieuTranchida_Web_Accueil_Lifestyle.jpg';
-import image4 from './photos/home/©MathieuTranchida_Web_Accueil_Landscape.jpg';
+import image4 from './photos/home/©MathieuTranchida_Web_Accueil_Information.jpg';
 
 
 

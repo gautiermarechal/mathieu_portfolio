@@ -164,6 +164,14 @@ const useStyles = makeStyles( theme => ({
             width: '300px',
         },
     },
+    contactText: {
+      paddingLeft: '200px',
+      paddingRight: '200px',
+      paddingBottom: '40px',
+      [theme.breakpoints.down('sm')]: {
+        padding: theme.spacing(3),
+      }
+    }
 }));
 
 const CustomFields = withStyles({
@@ -323,7 +331,15 @@ export default function AboutMe(props) {
     <ThemeProvider theme={themeExpandedBlack}><Collaboration/></ThemeProvider>
     <Paper elevation={3} className={classes.paper}>
         <ThemeProvider theme={themeExpandedBlack}><Typography variant="h5" align="center" className={classes.title}>CONTACT</Typography></ThemeProvider>
-        <ThemeProvider theme={themeStandardRegularItalic}><Typography variant="h5" align="center" >Contact me if you want to book a shoot, buy a picture, chat or anything else</Typography></ThemeProvider>
+        <ThemeProvider theme={themeStandardRegularItalic}><Typography variant="h6" align="left" className={classes.contactText}> 
+        You are a company, an athlete or an individual with an outdoor project in mind? Send me an email through the <strong>contact</strong> section below. I am always excited to get involved with new people and their projects.
+                <br/>
+                You want to buy a print or a digital image? Send me an email through the <strong>contact</strong> section below.
+                <br/>
+                Please note that pricing depends on the needs and duration of your project. 
+                <br/>
+                Any other inquiry should be done though the contact section.
+                <br/></Typography></ThemeProvider>
     <form className={classes.root} noValidate onSubmit={(e) => handleSubmit(e)}>
         <TextField 
         classes={{root: classes.inputField}}

@@ -147,7 +147,7 @@ const useStyles = makeStyles( theme => ({
         paddingBottom: '35px',
         textAlign: 'justify',
         overflow: 'visible',
-        lineHeight: '1',
+        lineHeight: '2 !important',
         [theme.breakpoints.down('960')]: {
             textAlign: 'justify',
             paddingLeft: '30px',
@@ -168,9 +168,9 @@ const useStyles = makeStyles( theme => ({
         width: '150px',
         float: 'right',
         fontSize: '5vw',
-        [theme.breakpoints.down('1165')]: {
-          display: 'none',  
-      },
+      //   [theme.breakpoints.down('1165')]: {
+      //     display: 'none',  
+      // },
     },
     mathImage: {
         [theme.breakpoints.down('1100')]: {
@@ -229,7 +229,7 @@ export default function ParagraphAboutMe() {
                 </ThemeProvider>
                 <br/>
                 <ThemeProvider theme={themeStandardRegular}>
-                <Typography variant="body1">
+                <Typography variant="body1" style={{lineHeight: '1.75'}}>
                 {/* <strong>My Story</strong> */}
                 {/* <br/> */}
                 &emsp;&emsp;&emsp; My name is Mathieu Tranchida and I’m a photographer. I was born in France, grew up in Switzerland and moved to Montreal in 2016 to complete a Business Degree at Concordia University. After spending most of my childhood outdoors, skiing in the mountains. Early on, I developed an interest for sport images through ski movies and magazines. Until I was 18 years old, I had never thought about taking pictures for a living. However, after an injury that ended my season, I chose to pick up a camera and shoot footage of my friends. It changed my life. Since then, I’ve taken my camera with me anywhere I go.
@@ -246,7 +246,7 @@ export default function ParagraphAboutMe() {
                 &emsp;&emsp;&emsp; I am very comfortable with my gear in the outdoors and am able to safely carry heavy backpacks through the backcountry. As an outdoor photographer, you must be able to react in difficult situations. Consequently, I have trained to become autonomous with the outdoors. I am a certified Advanced Wilderness First Aider (AWFA). I also have avalanche training and experience in moving through difficult terrain to effectuate rescues. For more information on my experience in the outdoors, please visit the testimonials section. 
                 <br/> 
                 <br/>
-                <ThemeProvider theme={themeExpandedBlackItalic}>
+                {/* <ThemeProvider theme={themeExpandedBlackItalic}>
                 <Typography variant={changeTitle()} align={'left'}>
                   MY SERVICES
                 </Typography>
@@ -258,7 +258,7 @@ export default function ParagraphAboutMe() {
                 Please note that pricing depends on the needs and duration of your project. 
                 <br/>
                 Any other inquiry should be done though the contact section.
-                <br/>
+                <br/> */}
                 </Typography>
                 </ThemeProvider>
                 <img src={signatureMathAboutMe} className={classes.mathSignature} draggable="false"/>
