@@ -87,12 +87,6 @@ const useStyles = makeStyles(theme => ({
     gridList: {
         display: 'inline-block',
         padding: theme.spacing(2),
-        [theme.breakpoints.down('sm')]: {
-            paddingLeft: theme.spacing(0),
-            paddingRight: theme.spacing(0),
-            paddingTop: theme.spacing(0),
-            paddingBottom: theme.spacing(0),
-        },
     },
     tile: {
         display: 'inline-block',
@@ -147,9 +141,6 @@ export default function Home_Paragraph(){
                 COLLABORATIONS
             </Typography>
             <br/>
-            {/* <Typography variant='body1' align={'justify'}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At augue eget arcu dictum varius duis at. Aenean sed adipiscing diam donec adipiscing tristique risus nec. Urna neque viverra justo nec ultrices dui sapien eget. Aliquam ut porttitor leo a diam sollicitudin tempor id. Id aliquet lectus proin nibh nisl condimentum id venenatis a. A diam maecenas sed enim ut. Tortor id aliquet lectus proin nibh nisl. Pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id. Eleifend donec pretium vulputate sapien nec. Tortor dignissim convallis aenean et tortor at risus. At tellus at urna condimentum mattis pellentesque.
-            </Typography> */}
             <GridList cellHeight={"auto"} cols={3} spacing={changeSpacing()} className={classes.gridList}>
                 <GridListTile className={classes.tile}>
                 <a href="https://ca.686.com/blogs/news/gfs-camp-recap-with-laurent-de-martin?utm_source=ebay&utm_medium=affiliate&utm_campaign=generic&clickId=3048279547">

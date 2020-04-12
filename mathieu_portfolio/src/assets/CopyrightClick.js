@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core';
-
-const useStyles = makeStyles(theme => ({
-  
-}));
-
-
 
 export default function CopyrightClick (){
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
+  document.body.addEventListener('dragover', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+  }, false);
+  document.body.addEventListener('drop', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+  }, false);
 
   document.addEventListener("contextmenu", function(e){
     e.preventDefault();
@@ -44,17 +49,4 @@ export default function CopyrightClick (){
     e.preventDefault();
     return false;
   }
-    const classes = useStyles();
-    const [rightClickMenu, setRightClickMenu] = useState(
-      <React.Fragment></React.Fragment>
-    );
-    const [open, setOpen] = useState(true);
-
-    const handleClose = () => {
-        setOpen(false);
-    }
-
-    const handleOpen = () => {
-        setOpen(true);
-    }
 }

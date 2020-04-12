@@ -27,6 +27,9 @@ const useStyles = makeStyles(theme => ({
   },
   titleHeader: {
     padding: '100px 75px',
+    [theme.breakpoints.down(435)]: {
+      fontSize: '6vw',
+    },
   },
   tile:{
     display: 'flex'

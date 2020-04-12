@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import imageMath from '../assets/photos/Mathieu_Profile.jpg';
+import imageMath from '../assets/photos/information/©MathieuTranchida_Web_Information_Headshot.jpg';
 import signatureMathAboutMe from '../assets/Signature_AboutMe.png';
 import { createMuiTheme } from '@material-ui/core/styles';
 // FONTS IMPORT --------------------------------------------------
@@ -135,7 +135,7 @@ const useStyles = makeStyles( theme => ({
     tileParagraph: {
         backgroundColor: 'black',
         color: 'white',
-        fontSize: '1vw',
+        fontSize: '0vw',
         [theme.breakpoints.down('md')]: {
             height: '1900px',
         }
@@ -147,7 +147,7 @@ const useStyles = makeStyles( theme => ({
         paddingBottom: '35px',
         textAlign: 'justify',
         overflow: 'visible',
-        lineHeight: '2',
+        lineHeight: '1',
         [theme.breakpoints.down('960')]: {
             textAlign: 'justify',
             paddingLeft: '30px',
@@ -167,9 +167,13 @@ const useStyles = makeStyles( theme => ({
         height: '150x',
         width: '150px',
         float: 'right',
+        fontSize: '5vw',
+        [theme.breakpoints.down('1165')]: {
+          display: 'none',  
+      },
     },
     mathImage: {
-        [theme.breakpoints.down('1088')]: {
+        [theme.breakpoints.down('1100')]: {
             width: '100%',  
         },
     },
@@ -187,10 +191,10 @@ export default function ParagraphAboutMe() {
 
     function changeTitle(){
         if(smallScreen) {
-            return "h6";
+            return "subtitle1";
         }
         else {
-            return "h5";
+            return "h6";
         }
     }
 
@@ -207,7 +211,7 @@ export default function ParagraphAboutMe() {
         return 'auto';
     }
     else
-        return 900;
+        return 1050;
     }
 
     return(
@@ -220,26 +224,44 @@ export default function ParagraphAboutMe() {
                 <Box className={classes.paragraph}>
                 <ThemeProvider theme={themeExpandedBlackItalic}>
                 <Typography variant={changeTitle()} align={'left'}>
-                    ABOUT ME
+                    MY STORY
                 </Typography>
                 </ThemeProvider>
                 <br/>
                 <ThemeProvider theme={themeStandardRegular}>
                 <Typography variant="body1">
-                &emsp;&emsp;&emsp; My name is Mathieu Tranchida and I’m a photographer. I was born in France in 1998 and grew up in Switzerland. At a very young age, I discovered a passion for the mountains and extreme sports through ski movies. My friends and I loved it so much that started to film each other going off cliffs and doing tricks on skis. It was fun for a while, but I soon realized that I had more fun shooting pictures than getting hurt in front of the camera. Since that time, I never stopped taking pictures.
+                {/* <strong>My Story</strong> */}
+                {/* <br/> */}
+                &emsp;&emsp;&emsp; My name is Mathieu Tranchida and I’m a photographer. I was born in France, grew up in Switzerland and moved to Montreal in 2016 to complete a Business Degree at Concordia University. After spending most of my childhood outdoors, skiing in the mountains. Early on, I developed an interest for sport images through ski movies and magazines. Until I was 18 years old, I had never thought about taking pictures for a living. However, after an injury that ended my season, I chose to pick up a camera and shoot footage of my friends. It changed my life. Since then, I’ve taken my camera with me anywhere I go.
                 <br/>
                 <br/>
-                &emsp;&emsp;&emsp; In 2017, I decided to leave Europe and study abroad to challenge myself. I made it to Concordia University in Montreal, where I started a business degree to acquire the skills to run my own production company. During my degree, I did my best to broaden my horizons on photography and out of the mountains. I reached out to many associations to shoot their events. Leading me to capture a wide variety of subjects including team sports, fashion shows, galas, conferences and clothing lines.
+                <ThemeProvider theme={themeExpandedBlackItalic}>
+                <Typography variant={changeTitle()} align={'left'}>
+                  MY EXPERIENCE
+                </Typography>
+                </ThemeProvider>
+                &emsp;&emsp;&emsp; I have been shooting photos professionally since 2017. In these last four years, I have produced sport, event, film, product and portrait shoots, working with several globally known brands such as: Arc’teryx, 686, and Psicobloc. I have also been published in online articles with magazines L’équipe and Skipass. During this time I have come to realize my strengths lay in capturing movement in sports. 
                 <br/> 
                 <br/>
-                &emsp;&emsp;&emsp; More recently, I got the chance to work with companies and professional athletes. Allowing me to develop new skills and understand the power of images in a commercial setting. Arc’teryx Montreal was the first company to trust me with photography projects and we developed close ties throughout the years.
+                &emsp;&emsp;&emsp; I am very comfortable with my gear in the outdoors and am able to safely carry heavy backpacks through the backcountry. As an outdoor photographer, you must be able to react in difficult situations. Consequently, I have trained to become autonomous with the outdoors. I am a certified Advanced Wilderness First Aider (AWFA). I also have avalanche training and experience in moving through difficult terrain to effectuate rescues. For more information on my experience in the outdoors, please visit the testimonials section. 
                 <br/> 
                 <br/>
-                &emsp;&emsp;&emsp; If you have any questions, interests or business inquiries, feel free to contact me through the “Info” section of the website. There, you will be able to find a list of companies I worked with, testimonials from professional athletes, and more…  For the rest, I’ll let my pictures speak for myself!
+                <ThemeProvider theme={themeExpandedBlackItalic}>
+                <Typography variant={changeTitle()} align={'left'}>
+                  MY SERVICES
+                </Typography>
+                </ThemeProvider>
+                &emsp;&emsp;&emsp; You are a company, an athlete or an individual with an outdoor project in mind? Send me an email through the <strong>contact</strong> section below. I am always excited to get involved with new people and their projects.
+                <br/>
+                You want to buy a print or a digital image? Send me an email through the <strong>contact</strong> section below.
+                <br/>
+                Please note that pricing depends on the needs and duration of your project. 
+                <br/>
+                Any other inquiry should be done though the contact section.
                 <br/>
                 </Typography>
                 </ThemeProvider>
-                <img src={signatureMathAboutMe} className={classes.mathSignature}/>
+                <img src={signatureMathAboutMe} className={classes.mathSignature} draggable="false"/>
                 </Box>
             </GridListTile>
         </GridList>

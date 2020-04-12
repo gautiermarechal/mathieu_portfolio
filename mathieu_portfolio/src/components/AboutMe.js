@@ -12,6 +12,7 @@ import Testimonials from './Testimonials';
 import Collaboration from './Collaborations';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import CopyrightClick from '../assets/CopyrightClick';
 // FONTS IMPORT --------------------------------------------------
 import GTAmerciaStandardRegular from '../assets/fonts/GT-America-Standard-Regular.woff2';
 import GTAmerciaStandardRegularItalic from '../assets/fonts/GT-America-Standard-Regular-Italic.woff2';
@@ -321,7 +322,7 @@ export default function AboutMe(props) {
     <Testimonials/>
     <ThemeProvider theme={themeExpandedBlack}><Collaboration/></ThemeProvider>
     <Paper elevation={3} className={classes.paper}>
-        <ThemeProvider theme={themeExpandedBlack}><Typography variant="h5" align="center" className={classes.title}>CONTACT ME</Typography></ThemeProvider>
+        <ThemeProvider theme={themeExpandedBlack}><Typography variant="h5" align="center" className={classes.title}>CONTACT</Typography></ThemeProvider>
         <ThemeProvider theme={themeStandardRegularItalic}><Typography variant="h5" align="center" >Contact me if you want to book a shoot, buy a picture, chat or anything else</Typography></ThemeProvider>
     <form className={classes.root} noValidate onSubmit={(e) => handleSubmit(e)}>
         <TextField 

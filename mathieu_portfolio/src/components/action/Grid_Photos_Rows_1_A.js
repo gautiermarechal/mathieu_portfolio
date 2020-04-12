@@ -66,18 +66,18 @@ export default function GridPhotos_Rows_1_A() {
   const [tileBarTitle, setTileBarTitle] = useState(
     <Typography></Typography>
   );
-  const titlesList = [];
-  for(let i; i <= tileData.length; i++) {
-    const stateName = 'tileBarTitle' + i;
-    const setStateName = 'setTileBarTitle' + i;
-    titlesList[i] = stateName;
-  }
+  // const titlesList = [];
+  // for(let i; i <= tileData.length; i++) {
+  //   const stateName = 'tileBarTitle' + i;
+  //   const setStateName = 'setTileBarTitle' + i;
+  //   titlesList[i] = stateName;
+  // }
   
-  function handlePhotoClick(title) {
-    setTileBarTitle(
-      <Typography>{title}</Typography>
-    );
-  }
+  // function handlePhotoClick(title) {
+  //   setTileBarTitle(
+  //     <Typography>{title}</Typography>
+  //   );
+  // }
 
   return (
     <div className={classes.root}>
@@ -85,12 +85,12 @@ export default function GridPhotos_Rows_1_A() {
     <Grid item md={6} className={classes.leftList}>
     <GridList cellHeight={'auto'} className={classes.gridList} cols={1} spacing={0}>
         {tileData.slice(0,15).map(tile => (
-          <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.tile} onClick={() => handlePhotoClick(tile.title)}>
-            <img src={tile.img} alt={tile.title} className={classes.actualImage}/>
-            <GridListTileBar 
+          <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.tile}>
+            <img src={tile.img} alt={tile.title} className={classes.actualImage} draggable="false"/>
+            {/* <GridListTileBar 
               className={classes.tileBarContainer} 
               title={tileBarTitle}
-            />
+            /> */}
           </GridListTile>
         ))}
       </GridList>
@@ -99,13 +99,13 @@ export default function GridPhotos_Rows_1_A() {
     <GridList cellHeight={'auto'} className={classes.gridList} cols={1} spacing={0}>
         {tileData.slice(15).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.tile}>
-            <img src={tile.img} alt={tile.title} className={classes.actualImage}/>
-            <GridListTileBar 
+            <img src={tile.img} alt={tile.title} className={classes.actualImage} draggable="false"/>
+            {/* <GridListTileBar 
               key={tile.img}
               className={classes.tileBarContainer} 
               onClick={() => handlePhotoClick(tile.title)}
               title={tileBarTitle}
-            />
+            /> */}
           </GridListTile>
         ))}
         </GridList>

@@ -168,10 +168,8 @@ export default function Home_Paragraph(){
             </ThemeProvider>
             <br/>
             <Typography variant='body1' align={'justify'}>
-            &emsp;&emsp;&emsp;Mathieu is a very professional photographer. In scenarios like my movie "From Switzerland With Love", the priority is the video and Mathieu knew how to immortalize each moment of the sessions while disturbing the cameramen in no way. From lifestyle to action, he produced quality content that I am extremely happy with.
+            &emsp;&emsp;&emsp;Mathieu is a very professional photographer. During the shoot of our movie "From Switzerland With Love", the priority is first and foremost the film and Mathieu knew how to immortalize each moment of the sessions without disturbing the cameramen in any way. From lifestyle to action, he produced quality content that I am extremely happy with.
             <br/>
-            <br/>
-            <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}>&emsp;&emsp;&emsp;Mathieu est un photographe très professionnel. Dans un tournage comme pour mon film « From Switzerland With Love », l’important est d’abord la vidéo et Mathieu a su immortaliser chaque moment des sessions tout en dérangeant aucunement les caméramans. Du lifestyle à l’action, il a produit du contenu du qualité et dont je suis extrêmement content.</Typography></ThemeProvider>
             <br/>
             <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}><strong>Laurent de Martin, Professional Skier & Producer</strong></Typography></ThemeProvider>
             <br/>
@@ -180,16 +178,12 @@ export default function Home_Paragraph(){
             &emsp;&emsp;&emsp;Very fortunate to have met Mathieu through Arc'teryx! Over the years we have done a variety of shoots together and he is always able to create a feeling of exhilaration and intensity in his work. It has been such a pleasure to shoot training, product, lifestyle, and outdoor projects with him. Looking forward to the many more to come!
             <br/>
             <br/>
-            <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}>&emsp;&emsp;&emsp;Très chanceuse d'avoir rencontré Mathieu via Arc'teryx! Au fil des années, nous avons réalisé une variété de tournages ensemble et il a toujours été capable de créer un sentiment d'exaltation et d'intensité dans son travail. Ce fut un plaisir de tourner avec lui sur des projets d'entraînement, de produit, de style de vie et de plein air. Au plaisir des nombreux autres à venir!</Typography></ThemeProvider>
-            <br/>
             <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}><strong>Zoe Beauchemin, Climbing Athlete for Arc’teryx and Allez-up</strong></Typography></ThemeProvider>
             <br/>
             <Divider/>
             <br/>
             &emsp;&emsp;&emsp;It was a pleasure to work with Mathieu. He’s an outstanding photographer who knows exactly how to get the “money shot”. All his photos are created with deliberate intention. He is able to combine the needs of his client with his artistic vision to create spectacular photos. He achieves what few others do as well, which is to capture the atmosphere and the emotion of an event.
             <br/>
-            <br/>
-            <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}>&emsp;&emsp;&emsp;C’était un plaisir de travailler avec Mathieu. C’est un photographe hors pair qui sait exactement comment obtenir la “money shot”. Toutes ses photos sont créées avec intention. Il réussit à jumeler les besoins de son client avec sa vision artistique pour créer des photos spectaculaires. Il arrive à faire ce que peu de photographes réussissent aussi bien et c’est de capturer l’ambiance et l’émotion d’un événement.</Typography></ThemeProvider>
             <br/>
             <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}><strong>Alexa Fay, Digital Marketing Director of Psicobloc Open Series</strong></Typography></ThemeProvider>
             <br/>
@@ -198,16 +192,12 @@ export default function Home_Paragraph(){
             &emsp;&emsp;&emsp;Mathieu is professional and always at the top of his game. His images are technically beautiful. He's always wiling to learn new skills to adapt to customer needs. He is capable of creating the right settings no matter the request or environment.
             <br/>
             <br/>
-            <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}>&emsp;&emsp;&emsp;Mathieu est professionnel et toujours au sommet de son art. Ses images sont techniquement belles. Il est toujours prêt à acquérir de nouvelles compétences pour s'adapter aux besoins des clients. Il est capable de créer les bons paramètres, peu importe la demande ou l'environnement.</Typography></ThemeProvider>
-            <br/>
             <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}><strong>Katherine Boivin, Marketing Lead at Arc’teryx Montreal</strong></Typography></ThemeProvider>            
             <br/>
             <Divider/>
             <br/>
             &emsp;&emsp;&emsp;Mat’s artistic vision always blows my mind. His enthusiasm and passion for the work he does is extremely inspiring. He never takes no for an answer and is constantly trying to come up with new ideas and new ways to take his work to a new level. He really goes above and beyond and takes pride in creating the best possible outcome in whatever he’s working on. I have had the pleasure of working together with Mat on a few projects. He is very easy to work with, contributing fresh, new ideas while still capturing the essence of whatever concept he is working on. Collaborating with him is an experience I always look forward to.
             <br/>
-            <br/>
-            <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}>&emsp;&emsp;&emsp;La vision artistique de Mat me coupe toujours le souffle. Son enthousiasme et sa passion pour le travail qu'il fait est extrêmement inspirant. Il ne prend jamais un non pour une réponse et essaie constamment de trouver de nouvelles idées et de nouvelles façons d'amener son travail à un nouveau niveau. Il va vraiment au-delà et est fier de créer le meilleur résultat possible. J'ai eu le plaisir de travailler avec Mat sur quelques projets. Il est très facile à travailler, apportant de nouvelles idées fraîches tout en capturant l'essence de tout concept sur lequel il travaille. Collaborer avec lui est une expérience que j'attends toujours avec impatience.</Typography></ThemeProvider>
             <br/>
             <ThemeProvider theme={themeStandardRegularItalic}><Typography variant='body1' align={'justify'}><strong>Aidan Cameron, Content Creator</strong></Typography></ThemeProvider>            
             </Typography>

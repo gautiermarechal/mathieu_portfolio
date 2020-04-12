@@ -70,7 +70,7 @@ export default function GridPhotos_Rows_1_A() {
     <GridList cellHeight={'auto'} className={classes.gridList} cols={1} spacing={0}>
         {tileData.slice(0,12).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.tile}>
-            <img src={tile.img} alt={tile.title} className={classes.actualImage}/>
+            <img src={tile.img} alt={tile.title} className={classes.actualImage} draggable="false"/>
           </GridListTile>
         ))}
       </GridList>
@@ -79,7 +79,7 @@ export default function GridPhotos_Rows_1_A() {
     <GridList cellHeight={'auto'} className={classes.gridList} cols={1} spacing={0}>
         {tileData.slice(12).map(tile => (
           <GridListTile key={tile.img} cols={tile.cols || 1} className={classes.tile}>
-            <img src={tile.img} alt={tile.title} className={classes.actualImage}/>
+            <img src={tile.img} alt={tile.title} className={classes.actualImage} draggable="false"/>
           </GridListTile>
         ))}
         </GridList>

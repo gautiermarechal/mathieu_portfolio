@@ -51,6 +51,10 @@ import AboutMe from './components/AboutMe';
 import CopyrightClick from './assets/CopyrightClick';
 //--------------------------------------------------------------------
 
+//SCROLL TOP IMPORTS -----------------------------------------------
+import ScrollToTop from './assets/ScrollToTop';
+//--------------------------------------------------------------------
+
 //EMAIL SENT IMPORTS -----------------------------------------------
 import EmailSent from './components/EmailSent';
 //--------------------------------------------------------------------
@@ -148,42 +152,29 @@ function App() {
     <ThemeProvider theme={theme}>
     <CssBaseline/>
     <BrowserRouter>
+    <ScrollToTop/>
     <div className={classes.app}>
     <Route path="/">
       <Route path="/" exact>
         <div className={classes.homeContainer}>
         <AppNavBar_Home/>
         <Home/>
-        {/* <Home_Paragraph/> */}
-        {/* <Grid_Photos_3_Home/> */}
         <Footer/>
         </div>
       </Route>
       <Route path="/action">
         <AppNavBar/>
         <Grid_Photos_Rows_1_A/>
-        {/* <Grid_Photos_Ski_Trick/>
-        <GridPhotos_2_A/>
-        <Grid_Photos_Rows_2_A/>
-        <GridPhotos_4_A/> */}
         <Footer/>
       </Route>
       <Route path="/landscapes">
         <AppNavBar/>
         <Grid_Photos_Rows_1_LD/>
-        {/* <GridPhotos_1_LD/>
-        <GridPhotos_2_LD/>
-        <Grid_Photos_Rows_LD/>
-        <GridPhotos_4_LD/> */}
         <Footer/>
       </Route>
       <Route path="/lifestyle">
         <AppNavBar/>
         <Grid_Photos_Rows_1_LF/>
-        {/* <GridPhotos_1_LF/>
-        <GridPhotos_2_LF/>
-        <Grid_Photos_Rows_LF/>
-        <GridPhotos_4_LF/> */}
         <Footer/>
       </Route>
       <Route path="/about-me">
