@@ -126,6 +126,11 @@ const useStyles = makeStyles( theme => ({
     },
     title: {
         padding: '40px',
+        [theme.breakpoints.down('md')]: {
+          padding: '40px',
+          paddingBottom: '20px'
+      },
+
     },
     messageField: {
         borderColor: 'black',
@@ -168,8 +173,10 @@ const useStyles = makeStyles( theme => ({
       paddingLeft: '200px',
       paddingRight: '200px',
       paddingBottom: '40px',
+      lineHeight: '2',
       [theme.breakpoints.down('sm')]: {
-        padding: theme.spacing(3),
+        padding: theme.spacing(1),
+        paddingTop: theme.spacing(0),
       }
     }
 }));
@@ -330,8 +337,8 @@ export default function AboutMe(props) {
     <Testimonials/>
     <ThemeProvider theme={themeExpandedBlack}><Collaboration/></ThemeProvider>
     <Paper elevation={3} className={classes.paper}>
-        <ThemeProvider theme={themeExpandedBlack}><Typography variant="h5" align="center" className={classes.title}>CONTACT</Typography></ThemeProvider>
-        <ThemeProvider theme={themeStandardRegularItalic}><Typography variant="h6" align="left" className={classes.contactText}> 
+        <ThemeProvider theme={themeExpandedBlack}><a id="contact"><Typography variant="h5" align="center" className={classes.title}>CONTACT</Typography></a></ThemeProvider>
+        <ThemeProvider theme={themeStandardRegularItalic}><Typography variant="body1" align="center" className={classes.contactText}> 
         You are a company, an athlete or an individual with an outdoor project in mind? Send me an email through the <strong>contact</strong> section below. I am always excited to get involved with new people and their projects.
                 <br/>
                 You want to buy a print or a digital image? Send me an email through the <strong>contact</strong> section below.

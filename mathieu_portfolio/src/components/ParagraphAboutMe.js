@@ -135,9 +135,9 @@ const useStyles = makeStyles( theme => ({
     tileParagraph: {
         backgroundColor: 'black',
         color: 'white',
-        fontSize: '0vw',
+        fontSize: 'large',
         [theme.breakpoints.down('md')]: {
-            height: '1900px',
+            height: '1900px', 
         }
     },
     paragraph: {
@@ -148,6 +148,9 @@ const useStyles = makeStyles( theme => ({
         textAlign: 'justify',
         overflow: 'visible',
         lineHeight: '2 !important',
+        [theme.breakpoints.down('1205')]: {
+          fontSize: '1rem', 
+      },
         [theme.breakpoints.down('960')]: {
             textAlign: 'justify',
             paddingLeft: '30px',
@@ -168,9 +171,6 @@ const useStyles = makeStyles( theme => ({
         width: '150px',
         float: 'right',
         fontSize: '5vw',
-      //   [theme.breakpoints.down('1165')]: {
-      //     display: 'none',  
-      // },
     },
     mathImage: {
         [theme.breakpoints.down('1100')]: {
@@ -179,13 +179,21 @@ const useStyles = makeStyles( theme => ({
     },
     aboutMeTitleFont: {
         fontFamily: 'GT America Standard Regular'
-    }
+    },
+    text: {
+      [theme.breakpoints.up('1686')]: {
+        fontSize: '1.1vw !important',
+      },
+      [theme.breakpoints.up('2021')]: {
+        lineHeight: '1.23 !important',
+      },
+    },
 }));
 
 export default function ParagraphAboutMe() {
     const classes = useStyles();
     const theme = useTheme();
-    const colMatches = useMediaQuery(theme.breakpoints.up('1100'));
+    const colMatches = useMediaQuery(theme.breakpoints.up('1120'));
     const heightMatches = useMediaQuery(theme.breakpoints.down('1100'));
     const smallScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
@@ -211,7 +219,7 @@ export default function ParagraphAboutMe() {
         return 'auto';
     }
     else
-        return 1050;
+        return 900;
     }
 
     return(
@@ -227,12 +235,11 @@ export default function ParagraphAboutMe() {
                     MY STORY
                 </Typography>
                 </ThemeProvider>
-                <br/>
                 <ThemeProvider theme={themeStandardRegular}>
-                <Typography variant="body1" style={{lineHeight: '1.75'}}>
+                <Typography variant="body1" style={{lineHeight: '1.75',}} className={classes.text}>
                 {/* <strong>My Story</strong> */}
                 {/* <br/> */}
-                &emsp;&emsp;&emsp; My name is Mathieu Tranchida and I’m a photographer. I was born in France, grew up in Switzerland and moved to Montreal in 2016 to complete a Business Degree at Concordia University. After spending most of my childhood outdoors, skiing in the mountains. Early on, I developed an interest for sport images through ski movies and magazines. Until I was 18 years old, I had never thought about taking pictures for a living. However, after an injury that ended my season, I chose to pick up a camera and shoot footage of my friends. It changed my life. Since then, I’ve taken my camera with me anywhere I go.
+                &emsp;&emsp;&emsp; Mathieu Tranchida is a professional outdoor photographer specialized in capturing movement in sports. He spends most of his time between Montreal and his home country of Switzerland.
                 <br/>
                 <br/>
                 <ThemeProvider theme={themeExpandedBlackItalic}>
@@ -240,12 +247,16 @@ export default function ParagraphAboutMe() {
                   MY EXPERIENCE
                 </Typography>
                 </ThemeProvider>
-                &emsp;&emsp;&emsp; I have been shooting photos professionally since 2017. In these last four years, I have produced sport, event, film, product and portrait shoots, working with several globally known brands such as: Arc’teryx, 686, and Psicobloc. I have also been published in online articles with magazines L’équipe and Skipass. During this time I have come to realize my strengths lay in capturing movement in sports. 
+                &emsp;&emsp;&emsp; After spending most of his childhood outdoors, Mathieu developed an interest in sport images through ski movies and magazines. Until he was 18 years old, Matt had never thought about being behind the lens. However, after an injury that ended his ski season, he chose to pick up a camera and shoot footage of his friends. Since then, Mathieu never stopped taking pictures.
                 <br/> 
                 <br/>
-                &emsp;&emsp;&emsp; I am very comfortable with my gear in the outdoors and am able to safely carry heavy backpacks through the backcountry. As an outdoor photographer, you must be able to react in difficult situations. Consequently, I have trained to become autonomous with the outdoors. I am a certified Advanced Wilderness First Aider (AWFA). I also have avalanche training and experience in moving through difficult terrain to effectuate rescues. For more information on my experience in the outdoors, please visit the testimonials section. 
+                &emsp;&emsp;&emsp; Mathieu has been shooting photos professionally since 2017. In the last four years, Mathieu mainly produced sport, product and event images for brands such as Arc’teryx and Psicobloc. He has also been published in online articles with French magazines L’équipe and Skipass. 
                 <br/> 
                 <br/>
+                &emsp;&emsp;&emsp; Over the years, Mathieu has proved to be comfortable in the outdoors and showed the ability to operate in exposed terrain with professional camera equipment. Mathieu is a certified Advanced Wilderness First Aider (AWFA) and has avalanche training. For more information about his experience in the outdoors, please visit the <a href="#testimonials" style={{color: 'inherit', textDecoration: 'inherit'}}><strong>testimonials</strong></a> section or send an email through the contact section.
+                <br/> 
+                <br/>
+                &emsp;&emsp;&emsp; <a href="#contact" style={{color: 'inherit', textDecoration: 'inherit'}}><strong>Contact</strong></a> section for quotes on projects and prints below.
                 {/* <ThemeProvider theme={themeExpandedBlackItalic}>
                 <Typography variant={changeTitle()} align={'left'}>
                   MY SERVICES

@@ -162,7 +162,7 @@ export default function Home_Paragraph(){
         <ThemeProvider theme={themeStandardRegular}>
         <Box className={classes.root}>
             <ThemeProvider theme={themeExpandedBlack}>
-            <Typography variant={changeTitle()} align={'center'} className={classes.title}>
+            <Typography variant={changeTitle()} align={'center'} className={classes.title} id="testimonials">
                     TESTIMONIALS
             </Typography>
             </ThemeProvider>

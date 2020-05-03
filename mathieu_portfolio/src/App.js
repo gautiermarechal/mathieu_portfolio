@@ -177,11 +177,13 @@ function App() {
         <Grid_Photos_Rows_1_LF/>
         <Footer/>
       </Route>
+      <div className={"information-page"}>
       <Route path="/about-me">
         <AppNavBar/>
         <AboutMe/>
         <Footer/>
       </Route>
+      </div>
       <Route path="/email-sent">
         <AppNavBar/>
         <EmailSent/>

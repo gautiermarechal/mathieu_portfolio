@@ -108,8 +108,9 @@ const useStyles = makeStyles(theme => ({
         },
     },
     title: {
-        padding: '20px',
-    },
+        padding: '40px',
+        paddingBottom: '0px',
+        },
 }));
 
 export default function Home_Paragraph(){
@@ -143,42 +144,42 @@ export default function Home_Paragraph(){
             <br/>
             <GridList cellHeight={"auto"} cols={3} spacing={changeSpacing()} className={classes.gridList}>
                 <GridListTile className={classes.tile}>
-                <a href="https://ca.686.com/blogs/news/gfs-camp-recap-with-laurent-de-martin?utm_source=ebay&utm_medium=affiliate&utm_campaign=generic&clickId=3048279547">
+                <a href="https://ca.686.com/blogs/news/gfs-camp-recap-with-laurent-de-martin?utm_source=ebay&utm_medium=affiliate&utm_campaign=generic&clickId=3048279547" target="_blank">
                 <Paper classes={{root: classes.paperContainer}}>
                     <img src={Logo_686} className={classes.logoImage686}/>
                 </Paper>
                 </a>
                 </GridListTile>
                 <GridListTile className={classes.tile}>
-                    <a href="https://www.facebook.com/arcteryxmontreal/media_set/?set=a.2269975689763053">
+                    <a href="https://www.facebook.com/arcteryxmontreal/media_set/?set=a.2269975689763053" target="_blank">
                     <Paper className={classes.paperContainer}>
                     <img src={Logo_ArcTeryx}className={classes.logoImageArc}/>
                     </Paper>
                     </a>
                 </GridListTile>
                 <GridListTile className={classes.tile}>
-                    <a href="https://www.facebook.com/media/set/?set=a.2127903393912473&type=3">
+                    <a href="https://www.facebook.com/media/set/?set=a.2127903393912473&type=3" target="_blank">
                     <Paper className={classes.paperContainer}>
                     <img src={Logo_CasaCares}className={classes.logoImage686}/>
                     </Paper>
                     </a>
                 </GridListTile>
                 <GridListTile className={classes.tile}>
-                    <a href="https://www.lequipe.fr/Adrenaline/Ski-freeride/Actualites/Couloir-itineraire-domaine-piste-preferes-le-val-d-isere-de-leo-taillefer/998758"> 
+                    <a href="https://www.lequipe.fr/Adrenaline/Ski-freeride/Actualites/Couloir-itineraire-domaine-piste-preferes-le-val-d-isere-de-leo-taillefer/998758" target="_blank"> 
                     <Paper className={classes.paperContainer}>
                     <img src={Logo_Lequipe}className={classes.logoImageLequipe}/>
                     </Paper>
                     </a>
                 </GridListTile>
                 <GridListTile className={classes.tile}>
-                    <a href=" https://www.facebook.com/media/set/?set=a.10156832575509189&type=3">
+                    <a href=" https://www.facebook.com/media/set/?set=a.10156832575509189&type=3" target="_blank">
                     <Paper className={classes.paperContainer}>
                     <img src={Logo_iF3}className={classes.logoImageIF3}/>
                     </Paper>
                     </a>
                 </GridListTile>
                 <GridListTile className={classes.tile}>
-                    <a href="https://www.instagram.com/p/B1odeuHDAog/?utm_source=ig_web_copy_link ">
+                    <a href="https://www.instagram.com/p/B1odeuHDAog/?utm_source=ig_web_copy_link" target="_blank">
                     <Paper className={classes.paperContainer}>
                     <img src={Logo_Psicobloc}className={classes.logoImage686}/>
                     </Paper>

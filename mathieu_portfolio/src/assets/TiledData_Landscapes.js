@@ -1,4 +1,4 @@
-import image1 from './photos/landscapes/©MathieuTranchida_Web_Landscape_01.jpg';
+import image1 from './photos/landscapes/©MathieuTranchida_Web_Landscape_24.jpg';
 import image2 from './photos/landscapes/©MathieuTranchida_Web_Landscape_02.jpg';
 import image3 from './photos/landscapes/©MathieuTranchida_Web_Landscape_03.jpg';
 import image4 from './photos/landscapes/©MathieuTranchida_Web_Landscape_04.jpg';
@@ -21,7 +21,6 @@ import image20 from './photos/landscapes/©MathieuTranchida_Web_Landscape_20.jpg
 import image21 from './photos/landscapes/©MathieuTranchida_Web_Landscape_21.jpg';
 import image22 from './photos/landscapes/©MathieuTranchida_Web_Landscape_22.jpg';
 import image23 from './photos/landscapes/©MathieuTranchida_Web_Landscape_23.jpg';
-import image24 from './photos/landscapes/©MathieuTranchida_Web_Landscape_24.jpg';
 
 
 
@@ -165,13 +164,7 @@ const tileData = [
       img: image23,
       author: 'Mathieu Tranchida',
       cols: 1,
-    },
-    {
-      key: 23,
-      img: image24,
-      author: 'Mathieu Tranchida',
-      cols: 1,
-    },
+    },  
        
      ];
 

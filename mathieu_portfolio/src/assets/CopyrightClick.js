@@ -4,7 +4,10 @@ export default function CopyrightClick (){
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   }
-
+  document.body.addEventListener('touchstart', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+  },{passive: false}, false);
   document.body.addEventListener('dragover', function(e){
     e.preventDefault();
     e.stopPropagation();
@@ -17,6 +20,11 @@ export default function CopyrightClick (){
   document.addEventListener("contextmenu", function(e){
     e.preventDefault();
   }, false);
+
+  document.addEventListener("ontouchend", function(e){
+    e.preventDefault();
+  }, false);
+
   document.addEventListener("keydown", function(e) {
   //document.onkeydown = function(e) {
     // "I" key
