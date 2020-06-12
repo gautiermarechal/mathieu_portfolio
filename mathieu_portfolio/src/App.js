@@ -164,21 +164,27 @@ function App() {
       </Route>
       <Route path="/action">
         <AppNavBar/>
-        <Grid_Photos_Rows_1_A/>
+        <div className={"photos-copyright"}>
+          <Grid_Photos_Rows_1_A/>
+        </div>
         <Footer/>
       </Route>
       <Route path="/landscapes">
         <AppNavBar/>
+        <div className={"photos-copyright"}>
         <Grid_Photos_Rows_1_LD/>
+        </div>
         <Footer/>
       </Route>
       <Route path="/lifestyle">
         <AppNavBar/>
+        <div className={"photos-copyright"}>
         <Grid_Photos_Rows_1_LF/>
+        </div>
         <Footer/>
       </Route>
       <div className={"information-page"}>
-      <Route path="/about-me">
+      <Route path="/information">
         <AppNavBar/>
         <AboutMe/>
         <Footer/>

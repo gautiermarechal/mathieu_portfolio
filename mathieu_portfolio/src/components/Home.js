@@ -58,7 +58,7 @@ export default function Home(props) {
     'LIFESTYLE',
     'INFORMATION'
 ]);
-const linkRoutes = ['/action', '/landscapes', '/lifestyle', '/about-me'];
+const linkRoutes = ['/action', '/landscapes', '/lifestyle', '/information'];
 
   const getGridListCol = () => {
     if(colMatches){

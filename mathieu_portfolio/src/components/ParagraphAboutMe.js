@@ -232,7 +232,7 @@ export default function ParagraphAboutMe() {
                 <Box className={classes.paragraph}>
                 <ThemeProvider theme={themeExpandedBlackItalic}>
                 <Typography variant={changeTitle()} align={'left'}>
-                    MY STORY
+                  ABOUT
                 </Typography>
                 </ThemeProvider>
                 <ThemeProvider theme={themeStandardRegular}>
@@ -243,9 +243,6 @@ export default function ParagraphAboutMe() {
                 <br/>
                 <br/>
                 <ThemeProvider theme={themeExpandedBlackItalic}>
-                <Typography variant={changeTitle()} align={'left'}>
-                  MY EXPERIENCE
-                </Typography>
                 </ThemeProvider>
                 &emsp;&emsp;&emsp; After spending most of his childhood outdoors, Mathieu developed an interest in sport images through ski movies and magazines. Until he was 18 years old, Matt had never thought about being behind the lens. However, after an injury that ended his ski season, he chose to pick up a camera and shoot footage of his friends. Since then, Mathieu never stopped taking pictures.
                 <br/> 

@@ -124,7 +124,7 @@ export default function AppNavBar(props) {
                 <Grid item xs ={2} style={{height: '95px'}}>
                 <Link to="/">
                       <img src={Mathieu_Logo} className={classes.logo}/>
-                </Link>             
+                </Link>
                 </Grid>
                 <Grid item xs ={2} style={{height: '95px'}}>
                   <Link to="/lifestyle" className={classes.smallTitle}>
@@ -136,7 +136,7 @@ export default function AppNavBar(props) {
                   </Link>
                 </Grid>
                 <Grid item xs ={2} style={{height: '95px'}}>
-                  <Link to="/about-me" className={classes.smallTitle}>
+                  <Link to="/information" className={classes.smallTitle}>
                     <ColorButton1>
                     <Typography variant="h6" className={classes.smallTitle}>
                       Information

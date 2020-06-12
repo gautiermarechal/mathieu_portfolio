@@ -1,13 +1,37 @@
 
 export default function CopyrightClick (){
 
+  let onLongTouch;
+  let timer;
+  let touchDuration = 800;
+
+  function touchstart(e){
+    e.preventDefault();
+    if(!timer){
+      timer = setTimeout(onLongTouch, touchDuration);
+    }
+  }
+
+  function touchend(){
+    if(timer){
+      clearTimeout(timer);
+      timer = null;
+    }
+  }
+
+  onLongTouch = function() {
+    document.body.addEventListener('ontouchstart', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  }
+
+  document.body.addEventListener("touchstart", touchstart , false);
+  document.body.addEventListener("touchend", touchend , false);
+
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   }
-  document.body.addEventListener('touchstart', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-  },{passive: false}, false);
   document.body.addEventListener('dragover', function(e){
     e.preventDefault();
     e.stopPropagation();

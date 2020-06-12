@@ -2,6 +2,10 @@ html{
   background-color: white;
 }
 
+.home-copyright{
+  pointer-events: none;
+}
+
 .information-page{
   scroll-behavior: smooth;
 }

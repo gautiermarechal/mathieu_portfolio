@@ -339,13 +339,13 @@ export default function AboutMe(props) {
     <Paper elevation={3} className={classes.paper}>
         <ThemeProvider theme={themeExpandedBlack}><a id="contact"><Typography variant="h5" align="center" className={classes.title}>CONTACT</Typography></a></ThemeProvider>
         <ThemeProvider theme={themeStandardRegularItalic}><Typography variant="body1" align="center" className={classes.contactText}> 
-        You are a company, an athlete or an individual with an outdoor project in mind? Send me an email through the <strong>contact</strong> section below. I am always excited to get involved with new people and their projects.
+                You are a company, an athlete or an individual with an outdoor project in mind? 
                 <br/>
-                You want to buy a print or a digital image? Send me an email through the <strong>contact</strong> section below.
+                Send Mathieu an email in the section below with a quick description of your project. Mathieu will come back to you with a quote.
                 <br/>
-                Please note that pricing depends on the needs and duration of your project. 
+                You want to buy a print or a digital image?
                 <br/>
-                Any other inquiry should be done though the contact section.
+                Send Mathieu an email below.
                 <br/></Typography></ThemeProvider>
     <form className={classes.root} noValidate onSubmit={(e) => handleSubmit(e)}>
         <TextField 

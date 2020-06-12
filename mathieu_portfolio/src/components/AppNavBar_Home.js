@@ -74,7 +74,7 @@ export default function AppNavBar() {
                 <Grid item xs ={2}>
                 <Link to="/">
                       <img src={Mathieu_Logo} className={classes.logo}/>
-                </Link>             
+                </Link>
                 </Grid>
                 <Grid item xs ={2}>
                 </Grid>

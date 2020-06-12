@@ -8,7 +8,6 @@ import image7 from './photos/lifestyle/©MathieuTranchida_Web_Lifestyle_07.jpg';
 import image8 from './photos/lifestyle/©MathieuTranchida_Web_Lifestyle_08.jpg';
 import image9 from './photos/lifestyle/©MathieuTranchida_Web_Lifestyle_09.jpg';
 import image10 from './photos/lifestyle/©MathieuTranchida_Web_Lifestyle_10.jpg';
-import image11 from './photos/lifestyle/©MathieuTranchida_Web_Lifestyle_11.jpg';
 import image12 from './photos/lifestyle/©MathieuTranchida_Web_Lifestyle_12.jpg';
 import image13 from './photos/lifestyle/©MathieuTranchida_Web_Lifestyle_13.jpg';
 import image14 from './photos/lifestyle/©MathieuTranchida_Web_Lifestyle_14.jpg';
@@ -77,22 +76,17 @@ const tileData = [
       cols: 1,
     },
     {
-      img: image11,
-      author: 'Mathieu Tranchida',
-      cols: 1,
-    },
-    {
       img: image12,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
-      img: image13,
+      img: image14,
       author: 'Mathieu Tranchida',
       cols: 1,
     },
     {
-      img: image14,
+      img: image13,
       author: 'Mathieu Tranchida',
       cols: 1,
     },

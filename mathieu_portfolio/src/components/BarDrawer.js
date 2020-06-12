@@ -155,7 +155,7 @@ export default function TemporaryDrawer() {
             />
           </ListItem>
         </Link>
-        <Link to="/about-me" className={classes.smallTitle}>
+        <Link to="/information" className={classes.smallTitle}>
           <ListItem key={"About-Me"}>
             <ListItemText primary={
               <ColorButton1>
